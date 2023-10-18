@@ -65,14 +65,6 @@ build CMakeFiles/FProjectP3.dir/src/mainMenu.cpp.o: CXX_COMPILER__FProjectP3_uns
   OBJECT_DIR = CMakeFiles/FProjectP3.dir
   OBJECT_FILE_DIR = CMakeFiles/FProjectP3.dir/src
 
-build CMakeFiles/FProjectP3.dir/src/loop.cpp.o: CXX_COMPILER__FProjectP3_unscanned_Debug /home/emi/Documents/Code/cpp/FProjectP3/src/loop.cpp || cmake_object_order_depends_target_FProjectP3
-  DEFINES = -DSFML_STATIC
-  DEP_FILE = CMakeFiles/FProjectP3.dir/src/loop.cpp.o.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
-  INCLUDES = -I/home/emi/Documents/Code/cpp/FProjectP3/cmake-build-debug/_deps/sfml-src/include
-  OBJECT_DIR = CMakeFiles/FProjectP3.dir
-  OBJECT_FILE_DIR = CMakeFiles/FProjectP3.dir/src
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target FProjectP3
@@ -81,7 +73,7 @@ build CMakeFiles/FProjectP3.dir/src/loop.cpp.o: CXX_COMPILER__FProjectP3_unscann
 #############################################
 # Link the executable FProjectP3
 
-build FProjectP3: CXX_EXECUTABLE_LINKER__FProjectP3_Debug CMakeFiles/FProjectP3.dir/src/main.cpp.o CMakeFiles/FProjectP3.dir/src/mainMenu.cpp.o CMakeFiles/FProjectP3.dir/src/loop.cpp.o | _deps/sfml-build/lib/libsfml-graphics-s-d.a _deps/sfml-build/lib/libsfml-audio-s-d.a _deps/sfml-build/lib/libsfml-window-s-d.a _deps/sfml-build/lib/libsfml-system-s-d.a /usr/lib/libudev.so /usr/lib/libGL.so /usr/lib/libGLU.so /usr/lib/libX11.so /usr/lib/libXrandr.so /usr/lib/libfreetype.so /usr/lib/libopenal.so /usr/lib/libvorbisenc.so /usr/lib/libvorbisfile.so /usr/lib/libvorbis.so /usr/lib/libogg.so /usr/lib/libFLAC.so || _deps/sfml-build/lib/libsfml-audio-s-d.a _deps/sfml-build/lib/libsfml-graphics-s-d.a _deps/sfml-build/lib/libsfml-system-s-d.a _deps/sfml-build/lib/libsfml-window-s-d.a
+build FProjectP3: CXX_EXECUTABLE_LINKER__FProjectP3_Debug CMakeFiles/FProjectP3.dir/src/main.cpp.o CMakeFiles/FProjectP3.dir/src/mainMenu.cpp.o | _deps/sfml-build/lib/libsfml-graphics-s-d.a _deps/sfml-build/lib/libsfml-audio-s-d.a _deps/sfml-build/lib/libsfml-window-s-d.a _deps/sfml-build/lib/libsfml-system-s-d.a /usr/lib/libudev.so /usr/lib/libGL.so /usr/lib/libGLU.so /usr/lib/libX11.so /usr/lib/libXrandr.so /usr/lib/libfreetype.so /usr/lib/libopenal.so /usr/lib/libvorbisenc.so /usr/lib/libvorbisfile.so /usr/lib/libvorbis.so /usr/lib/libogg.so /usr/lib/libFLAC.so || _deps/sfml-build/lib/libsfml-audio-s-d.a _deps/sfml-build/lib/libsfml-graphics-s-d.a _deps/sfml-build/lib/libsfml-system-s-d.a _deps/sfml-build/lib/libsfml-window-s-d.a
   FLAGS = -g
   LINK_LIBRARIES = _deps/sfml-build/lib/libsfml-graphics-s-d.a  _deps/sfml-build/lib/libsfml-audio-s-d.a  _deps/sfml-build/lib/libsfml-window-s-d.a  _deps/sfml-build/lib/libsfml-system-s-d.a  /usr/lib/libudev.so  /usr/lib/libGL.so  /usr/lib/libGLU.so  /usr/lib/libX11.so  /usr/lib/libXrandr.so  /usr/lib/libfreetype.so  -lpthread  -lrt  /usr/lib/libopenal.so  /usr/lib/libvorbisenc.so  /usr/lib/libvorbisfile.so  /usr/lib/libvorbis.so  /usr/lib/libogg.so  /usr/lib/libFLAC.so
   OBJECT_DIR = CMakeFiles/FProjectP3.dir

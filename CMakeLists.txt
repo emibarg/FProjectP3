@@ -10,5 +10,5 @@ set(CMAKE_CXX_STANDARD 14)
 add_executable(FProjectP3
         src/main.cpp
         src/mainMenu.cpp
-        src/loop.cpp)
+        )
 target_link_libraries(FProjectP3 sfml-graphics sfml-audio sfml-window sfml-system)

@@ -13,6 +13,6 @@ Call Stack (most recent call first):
   cmake-build-debug/_deps/sfml-src/src/SFML/Audio/CMakeLists.txt:70 (sfml_find_package)
 This warning is for project developers.  Use -Wno-dev to suppress it.
 
--- Configuring done (0.2s)
+-- Configuring done (0.4s)
 -- Generating done (0.0s)
 -- Build files have been written to: /home/emi/Documents/Code/cpp/FProjectP3/cmake-build-debug
