@@ -6,25 +6,26 @@ mainMenu::mainMenu(float width, float height) {
     if(!font.loadFromFile("../fonts/a-charming-font/Achafexp.ttf")){
         std::cout << "Error loading font" << std::endl;
     }
-    mainMenuText[0].setFont(font);
-    mainMenuText[0].setFillColor(sf::Color::Red);
-    mainMenuText[0].setCharacterSize(60);
-    mainMenuText[0].setString("Cantidad total de articulos diferentes.");
-    mainMenuText[0].setPosition(200,200);
+    int characterSize = 60;
+    std::string menuItems[] = {
+            "Cantidad total de articulos diferentes",
+            "Cantidad total de articulos",
+            "Minimo de stock",
+            "Salir"
+    };
 
-    mainMenuText[1].setFont(font);
-    mainMenuText[1].setFillColor(sf::Color::White);
-    mainMenuText[1].setString("Cantidad total de articulos.");
-    mainMenuText[1].setCharacterSize(60);
-    mainMenuText[1].setPosition(200,300);
+    for (int i = 0; i < max_main_menu; i++) {
+        mainMenuText[i].setFont(font);
+        mainMenuText[i].setCharacterSize(characterSize);
+        mainMenuText[i].setString(menuItems[i]);
+        mainMenuText[i].setPosition(x_axis, y_axis + i * 100);
+    }
+        mainMenuText[0].setFillColor(sf::Color::Red);
+        mainMenuText[1].setFillColor(sf::Color::White);
+        mainMenuText[2].setFillColor(sf::Color::White);
+        mainMenuText[3].setFillColor(sf::Color::White);
 
-    mainMenuText[2].setFont(font);
-    mainMenuText[2].setFillColor(sf::Color::White);
-    mainMenuText[2].setString("Salir");
-    mainMenuText[2].setCharacterSize(60);
-    mainMenuText[2].setPosition(200,400);
-
-    mainMenuSelected = 0;
+        mainMenuSelected = 0;
 
 }
 mainMenu::~mainMenu() {}
@@ -34,30 +35,28 @@ void mainMenu::draw(sf::RenderWindow &window) {
     }
 }
 void mainMenu::MoveUp() {
-    if(mainMenuSelected - 1 >= 0){
-        mainMenuText[mainMenuSelected].setFillColor(sf::Color::White);
+    mainMenuText[mainMenuSelected].setFillColor(sf::Color::White);
+
+    if (mainMenuSelected - 1 >= 0) {
         mainMenuSelected--;
-        if(mainMenuSelected == -1){
-            mainMenuSelected = 2;
-        } else {
-            mainMenuSelected = max_main_menu;  // Wrap around to the last item.
-            mainMenuText[0].setFillColor(sf::Color::Red);
-        }
-
-        mainMenuText[mainMenuSelected].setFillColor(sf::Color::Red);
-
+    } else {
+        mainMenuSelected = max_main_menu - 1;  // Wrap around to the last item.
     }
+
+    mainMenuText[mainMenuSelected].setFillColor(sf::Color::Red);
 }
+
+
 void mainMenu::MoveDown() {
+    mainMenuText[mainMenuSelected].setFillColor(sf::Color::White);
+
     if (mainMenuSelected + 1 < max_main_menu) {
-        mainMenuText[mainMenuSelected].setFillColor(sf::Color::White);
         mainMenuSelected++;
-        mainMenuText[mainMenuSelected].setFillColor(sf::Color::Red);
-    }
-        // Add an else condition to handle the case when you are already at the last item.
-    else {
+    } else {
         mainMenuSelected = 0;  // Wrap around to the first item.
-        mainMenuText[0].setFillColor(sf::Color::Red);
     }
+
+    mainMenuText[mainMenuSelected].setFillColor(sf::Color::Red);
 }
+
 

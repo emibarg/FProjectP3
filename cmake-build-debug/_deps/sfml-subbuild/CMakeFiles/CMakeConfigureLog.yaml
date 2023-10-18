@@ -4,8 +4,8 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/home/emi/Desktop/clion-2023.2.1/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineSystem.cmake:204 (message)"
+      - "D:/Program Files/CLion 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineSystem.cmake:204 (message)"
       - "CMakeLists.txt:10 (project)"
     message: |
-      The system is: Linux - 6.4.12-arch1-1 - x86_64
+      The system is: Windows - 10.0.22621 - AMD64
 ...

@@ -10,5 +10,11 @@ set(CMAKE_CXX_STANDARD 14)
 add_executable(FProjectP3
         src/main.cpp
         src/mainMenu.cpp
-        )
+        lib/CantArtDif.h
+        src/CantArtDif.cpp
+        lib/CantArt.h
+        src/CantArt.cpp
+        lib/MinStock.h
+        src/MinStock.cpp
+)
 target_link_libraries(FProjectP3 sfml-graphics sfml-audio sfml-window sfml-system)

@@ -5,90 +5,130 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <iostream>
+#include "../lib/CantArtDif.h"
+#include "../lib/CantArt.h"
+#include "../lib/MinStock.h"
 
 int main() {
     sf::RenderWindow MENU(sf::VideoMode(800, 600), "Menu", sf::Style::Default);
     mainMenu mainMenu(MENU.getSize().x, MENU.getSize().y);
-    //Background
+
+    // Initialize background
     sf::RectangleShape background(sf::Vector2f(800.0f, 600.0f));
     sf::Texture mainTexture;
-    mainTexture.loadFromFile("../background/demonwpp.jpg");
+    if (!mainTexture.loadFromFile("../background/demonwpp.jpg")) {
+        std::cerr << "Failed to load background texture!" << std::endl;
+        return 1;
+    }
     background.setTexture(&mainTexture);
-    //Music
+
+    // Initialize music
     sf::Music music;
     if (!music.openFromFile("../music/doom.wav")) {
-        // Handle the case where the file failed to load
-        // Print an error message, log, or exit the program gracefully.
         std::cerr << "Failed to load music file!" << std::endl;
-        return 1; // Exit the program with an error code
+        return 1;
     }
-
-// Rest of your code
-
-
-
+    music.setVolume(15);
+    music.play();
     while (MENU.isOpen()) {
         sf::Event event;
         while (MENU.pollEvent(event)) {
             if (event.type == sf::Event::Closed) {
                 MENU.close();
             }
+
             if (event.type == sf::Event::KeyReleased) {
                 if (event.key.code == sf::Keyboard::Up) {
                     mainMenu.MoveUp();
-                    break;
-                }
-                if (event.key.code == sf::Keyboard::Down) {
+                } else if (event.key.code == sf::Keyboard::Down) {
                     mainMenu.MoveDown();
-                    break;
-                }
-                if (event.key.code == sf::Keyboard::Return) {
-                    sf::RenderWindow CantArtDif(sf::VideoMode(800, 600), "Cantidad total de artículos diferentes.");
-                    sf::RenderWindow CantArt(sf::VideoMode(800, 600), "Cantidad total de artículos.");
-                    int x = mainMenu.mainMenuPressed();
-                    if(x == 0){
-                        while (CantArtDif.isOpen()) {
+                } else if (event.key.code == sf::Keyboard::Return) {
+                    int selectedItem = mainMenu.mainMenuPressed();
+                    if (selectedItem == 0) {
+                        // Handle "Cantidad total de artículos diferentes." menu option
+                        // Create a new window or transition to a new state.
+                        sf::RenderWindow CantArtDifW(sf::VideoMode(800, 600), "Cantidad total de artículos diferentes.");
+                        CantArtDiff CantArtDiff(CantArtDifW.getSize().x, CantArtDifW.getSize().y);
+                        // The event loop for the new window
+                        while (CantArtDifW.isOpen()) {
                             sf::Event event;
-                            while (CantArtDif.pollEvent(event)) {
-                                if (event.type == sf::Event::KeyPressed) {
-                                    if (event.key.code == sf::Keyboard::Escape) {
-                                        CantArtDif.close();
-                                    }
+                            while (CantArtDifW.pollEvent(event)) {
+                                if (event.key.code == sf::Keyboard::Escape) {
+                                    CantArtDifW.close();
                                 }
+                                // Handle other events specific to this window
+
                             }
-                            CantArt.close();
-                            CantArtDif.clear();
-                            CantArtDif.display();
+
+                            CantArtDifW.clear();
+                            CantArtDifW.draw(background);
+                            CantArtDiff.draw(CantArtDifW);
+                            // Draw and update the contents of this window
+
+                            CantArtDifW.display();
                         }
-                    }
-                    if(x == 1){
-                        while (CantArt.isOpen()) {
-                            sf::Event aevent;
-                            while (CantArtDif.pollEvent(aevent)) {
-                                if (aevent.type == sf::Event::KeyPressed) {
-                                    if (aevent.key.code == sf::Keyboard::Escape) {
-                                        CantArtDif.close();
-                                    }
+
+                    } else if (selectedItem == 1) {
+                        // Handle "Cantidad total de artículos." menu option
+                        // Create a new window or transition to a new state.
+                        sf::RenderWindow CantArtW(sf::VideoMode(800, 600), "Cantidad total de artículos diferentes.");
+                        CantArt CantArt(CantArtW.getSize().x, CantArtW.getSize().y);
+                        // The event loop for the new window
+                        while (CantArtW.isOpen()) {
+                            sf::Event event;
+                            while (CantArtW.pollEvent(event)) {
+                                if (event.key.code == sf::Keyboard::Escape) {
+                                    CantArtW.close();
                                 }
+                                // Handle other events specific to this window
                             }
-                            CantArtDif.close();
-                            CantArt.clear();
-                            CantArt.display();
+
+                            CantArtW.clear();
+                            // Draw and update the contents of this window
+
+                            CantArtW.draw(background);
+                            CantArt.draw(CantArtW);
+                            CantArtW.display();
                         }
-                    }
-                    if(x == 2){
+                    } else if (selectedItem == 2) {
+                        sf::RenderWindow MinStockW(sf::VideoMode(800, 600), "Cantidad total de artículos diferentes.");
+                        MinStock MinStock(MinStockW.getSize().x, MinStockW.getSize().y);
+                        // The event loop for the new window
+                        while (MinStockW.isOpen()) {
+                            sf::Event event;
+                            while (MinStockW.pollEvent(event)) {
+                                if (event.key.code == sf::Keyboard::Escape) {
+                                    MinStockW.close();
+                                }
+                                // Handle other events specific to this window
+                            }
+
+                            MinStockW.clear();
+                            // Draw and update the contents of this window
+
+                            MinStockW.draw(background);
+                            MinStock.draw(MinStockW);
+                            MinStockW.display();
+                        }
+
+                    } else if (selectedItem == 3) {
                         MENU.close();
                     }
                 }
             }
-            MENU.clear();
-            MENU.draw(background);
-            music.play();
-            mainMenu.draw(MENU);
-            MENU.display();
         }
+
+        MENU.clear();
+        MENU.draw(background);
+        mainMenu.draw(MENU);
+        MENU.display();
+
+
+        std::cout<<music.getStatus()<<std::endl;
     }
 
+    // Stop the music when it's no longer needed
+    music.stop();
 
     return 0;
 }

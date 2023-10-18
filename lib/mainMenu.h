@@ -6,19 +6,21 @@
 #define FPROJECTP3_MAINMENU_H
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#define max_main_menu 3
+#define x_axis 150
+#define y_axis 200
+#define max_main_menu 4
 class mainMenu {
 public:
     mainMenu(float width, float height);
-    void draw(sf::RenderWindow &window);
+    void draw(sf::RenderWindow &window); 
     void MoveUp();
     void MoveDown();
-    int mainMenuPressed(){return mainMenuSelected;};
+    int mainMenuPressed()const {return mainMenuSelected;};
     ~mainMenu();
 private:
     int mainMenuSelected;
     sf::Font font;
-    sf::Text mainMenuText[3];
+    sf::Text mainMenuText[max_main_menu];
 
 };
 
