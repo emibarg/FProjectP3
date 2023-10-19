@@ -19,7 +19,7 @@ MinStock::MinStock(float width, float height)  {
     MinStockText.setFillColor(sf::Color::White);
     MinStockText.setString("Listado de articulos en minimo de stock: ");
     MinStockText.setCharacterSize(characterSize);
-    MinStockText.setPosition(x_axis,y_axis);
+    MinStockText.setPosition(100,50);
     for (int i = 0; i < listArtSize; i++) {
         MinStockList[i].setFont(font);
         MinStockList[i].setCharacterSize(characterSize);

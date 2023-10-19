@@ -5,7 +5,7 @@
 #ifndef FPROJECTP3_MINSTOCK_H
 #define FPROJECTP3_MINSTOCK_H
 #define x_axis 150
-#define y_axis 200
+#define y_axis 100
 #define listArtSize 3
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>

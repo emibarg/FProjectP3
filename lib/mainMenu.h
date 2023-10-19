@@ -12,7 +12,7 @@
 class mainMenu {
 public:
     mainMenu(float width, float height);
-    void draw(sf::RenderWindow &window); 
+    void draw(sf::RenderWindow &window);
     void MoveUp();
     void MoveDown();
     int mainMenuPressed()const {return mainMenuSelected;};

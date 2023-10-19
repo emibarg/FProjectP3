@@ -124,11 +124,11 @@ int main() {
         MENU.display();
 
 
-        std::cout<<music.getStatus()<<std::endl;
+
     }
 
     // Stop the music when it's no longer needed
     music.stop();
 
     return 0;
-}
+} 
