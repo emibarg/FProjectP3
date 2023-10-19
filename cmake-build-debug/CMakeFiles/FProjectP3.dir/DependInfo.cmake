@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/Emiliano Barg/Desktop/FProjectP3/src/CantArt.cpp" "CMakeFiles/FProjectP3.dir/src/CantArt.cpp.obj" "gcc" "CMakeFiles/FProjectP3.dir/src/CantArt.cpp.obj.d"
   "C:/Users/Emiliano Barg/Desktop/FProjectP3/src/CantArtDif.cpp" "CMakeFiles/FProjectP3.dir/src/CantArtDif.cpp.obj" "gcc" "CMakeFiles/FProjectP3.dir/src/CantArtDif.cpp.obj.d"
+  "C:/Users/Emiliano Barg/Desktop/FProjectP3/src/Gestor.cpp" "CMakeFiles/FProjectP3.dir/src/Gestor.cpp.obj" "gcc" "CMakeFiles/FProjectP3.dir/src/Gestor.cpp.obj.d"
   "C:/Users/Emiliano Barg/Desktop/FProjectP3/src/MinStock.cpp" "CMakeFiles/FProjectP3.dir/src/MinStock.cpp.obj" "gcc" "CMakeFiles/FProjectP3.dir/src/MinStock.cpp.obj.d"
   "C:/Users/Emiliano Barg/Desktop/FProjectP3/src/main.cpp" "CMakeFiles/FProjectP3.dir/src/main.cpp.obj" "gcc" "CMakeFiles/FProjectP3.dir/src/main.cpp.obj.d"
   "C:/Users/Emiliano Barg/Desktop/FProjectP3/src/mainMenu.cpp" "CMakeFiles/FProjectP3.dir/src/mainMenu.cpp.obj" "gcc" "CMakeFiles/FProjectP3.dir/src/mainMenu.cpp.obj.d"

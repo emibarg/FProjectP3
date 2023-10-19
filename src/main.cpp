@@ -8,8 +8,12 @@
 #include "../lib/CantArtDif.h"
 #include "../lib/CantArt.h"
 #include "../lib/MinStock.h"
-
+#include "../lib/Producto.h"
+#include "../lib/Gestor.h"
 int main() {
+    Gestor gestor("../assets/Inventariado Fisico.csv");
+    gestor.leerArchivo();
+
     sf::RenderWindow MENU(sf::VideoMode(800, 600), "Menu", sf::Style::Default);
     mainMenu mainMenu(MENU.getSize().x, MENU.getSize().y);
 
@@ -48,7 +52,7 @@ int main() {
                         // Handle "Cantidad total de artículos diferentes." menu option
                         // Create a new window or transition to a new state.
                         sf::RenderWindow CantArtDifW(sf::VideoMode(800, 600), "Cantidad total de artículos diferentes.");
-                        CantArtDiff CantArtDiff(CantArtDifW.getSize().x, CantArtDifW.getSize().y);
+                        CantArtDiff CantArtDiff(CantArtDifW.getSize().x, CantArtDifW.getSize().y, std::to_string(gestor.getTotalArtDif()));
                         // The event loop for the new window
                         while (CantArtDifW.isOpen()) {
                             sf::Event event;
@@ -124,7 +128,7 @@ int main() {
         MENU.display();
 
 
-        std::cout<<music.getStatus()<<std::endl;
+
     }
 
     // Stop the music when it's no longer needed

@@ -4,13 +4,13 @@
 #include <iostream>
 #include "../lib/CantArtDif.h"
 #include <SFML/Graphics.hpp>
-CantArtDiff::CantArtDiff(float width, float height) {
+CantArtDiff::CantArtDiff(float width, float height, std::string tex)  {
     CantArtDifS.loadFromFile("../music/CantArtDifS.wav");
     CantArtDifSound.setBuffer(CantArtDifS);
     CantArtDifSound.setVolume(100);
     CantArtDifSound.play();
 
-    text = "7";
+    text = tex;
     if(!font.loadFromFile("../fonts/a-charming-font/Achafexp.ttf")){
         std::cout << "Error loading font" << std::endl;
     }

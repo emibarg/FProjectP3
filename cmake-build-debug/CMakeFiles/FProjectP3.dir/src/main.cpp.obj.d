@@ -260,4 +260,23 @@ CMakeFiles/FProjectP3.dir/src/main.cpp.obj: \
  C:/Users/EMILIA~1/Desktop/FPROJE~1/CMAKE-~1/_deps/sfml-src/include/SFML/Audio/SoundFileWriter.hpp \
  C:/Users/Emiliano\ Barg/Desktop/FProjectP3/lib/CantArtDif.h \
  C:/Users/Emiliano\ Barg/Desktop/FProjectP3/lib/CantArt.h \
- C:/Users/Emiliano\ Barg/Desktop/FProjectP3/lib/MinStock.h
+ C:/Users/Emiliano\ Barg/Desktop/FProjectP3/lib/MinStock.h \
+ C:/Users/Emiliano\ Barg/Desktop/FProjectP3/lib/Producto.h \
+ C:/Users/Emiliano\ Barg/Desktop/FProjectP3/lib/Gestor.h \
+ D:/Program\ Files/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_map \
+ D:/Program\ Files/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_map.h \
+ D:/Program\ Files/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hashtable.h \
+ D:/Program\ Files/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hashtable_policy.h \
+ D:/Program\ Files/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/enable_special_members.h \
+ D:/Program\ Files/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream \
+ D:/Program\ Files/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
+ D:/Program\ Files/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
+ D:/Program\ Files/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc \
+ D:/Program\ Files/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/sstream \
+ D:/Program\ Files/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/sstream.tcc \
+ D:/Program\ Files/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/queue \
+ D:/Program\ Files/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/deque \
+ D:/Program\ Files/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_deque.h \
+ D:/Program\ Files/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/deque.tcc \
+ D:/Program\ Files/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_queue.h \
+ C:/Users/Emiliano\ Barg/Desktop/FProjectP3/lib/Producto.h

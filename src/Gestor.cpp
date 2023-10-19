@@ -34,27 +34,48 @@ void Gestor::leerArchivo() {
         std::cerr << "Error opening file!" << std::endl;
         exit(1);
     }
+
     std::string line;
     std::string nombre;
     std::string codigo;
     std::vector<int> depositos;
+
+    bool firstLine = true;  // Flag to skip the first line
+
     while (getline(m_archivo, line)) {
+        if (firstLine) {
+            firstLine = false;
+            continue; // Skip the first line
+        }
+
         std::stringstream ss(line);
         std::string token;
         int i = 0;
+
         while (getline(ss, token, ',')) {
-            if (i == 0) {
-                nombre = token;
-            } else if (i == 1) {
+            if (i == 1) {
                 codigo = token;
-            } else {
-                depositos.push_back(std::stoi(token));
+            } else if (i == 2) {
+                nombre = token;
+            } else if (i > 2) {
+                if (token.empty()) {
+                    depositos.push_back(0);
+                } else {
+                    try {
+                        int deposito = std::stoi(token);
+                        depositos.push_back(deposito);
+                    } catch (const std::invalid_argument& e) {
+                        std::cerr << "Invalid input: " << e.what() << " on line: " << line << std::endl;
+                    }
+                }
             }
             i++;
         }
-        Producto producto = generarProducto(nombre, codigo, depositos);
 
+        Producto producto = generarProducto(nombre, codigo, depositos);
         cargarMapa(nombre, producto);
         depositos.clear();
     }
+
+    setTotalArtDif(m_productos.size());
 }

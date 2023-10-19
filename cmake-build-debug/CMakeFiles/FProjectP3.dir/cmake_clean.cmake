@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/FProjectP3.dir/src/CantArt.cpp.obj.d"
   "CMakeFiles/FProjectP3.dir/src/CantArtDif.cpp.obj"
   "CMakeFiles/FProjectP3.dir/src/CantArtDif.cpp.obj.d"
+  "CMakeFiles/FProjectP3.dir/src/Gestor.cpp.obj"
+  "CMakeFiles/FProjectP3.dir/src/Gestor.cpp.obj.d"
   "CMakeFiles/FProjectP3.dir/src/MinStock.cpp.obj"
   "CMakeFiles/FProjectP3.dir/src/MinStock.cpp.obj.d"
   "CMakeFiles/FProjectP3.dir/src/main.cpp.obj"

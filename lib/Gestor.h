@@ -43,6 +43,15 @@ public:
     void cargarMinStockDeposito(Producto producto, int n, int deposito);
     void setUbicacionArchivo(std::string ubicacion_archivo){m_ubicacion_archivo = ubicacion_archivo;}
     std::string getUbicacionArchivo()const{return m_ubicacion_archivo;}
+    std::unordered_map<std::string, Producto> getProductos()const{return m_productos;}
+    int getTotalArtDif()const{return total_art_dif_;}
+    int getTotalArt()const{return total_art_;}
+    std::priority_queue<int> getMinStock()const{return m_min_stock;}
+    std::priority_queue<int> getMaxStock()const{return m_max_stock;}
+    std::priority_queue<int> getMinStockDeposito()const{return m_min_stock_deposito;}
+    void setTotalArtDif(int total_art_dif){
+        total_art_dif_ = total_art_dif;}
+    void setTotalArt(int total_art){total_art_ = total_art;}
 
     ~Gestor();
     private:

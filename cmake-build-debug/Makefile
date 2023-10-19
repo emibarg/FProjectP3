@@ -299,6 +299,30 @@ src/CantArtDif.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\FProjectP3.dir\build.make CMakeFiles/FProjectP3.dir/src/CantArtDif.cpp.s
 .PHONY : src/CantArtDif.cpp.s
 
+src/Gestor.obj: src/Gestor.cpp.obj
+.PHONY : src/Gestor.obj
+
+# target to build an object file
+src/Gestor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\FProjectP3.dir\build.make CMakeFiles/FProjectP3.dir/src/Gestor.cpp.obj
+.PHONY : src/Gestor.cpp.obj
+
+src/Gestor.i: src/Gestor.cpp.i
+.PHONY : src/Gestor.i
+
+# target to preprocess a source file
+src/Gestor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\FProjectP3.dir\build.make CMakeFiles/FProjectP3.dir/src/Gestor.cpp.i
+.PHONY : src/Gestor.cpp.i
+
+src/Gestor.s: src/Gestor.cpp.s
+.PHONY : src/Gestor.s
+
+# target to generate assembly for a file
+src/Gestor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\FProjectP3.dir\build.make CMakeFiles/FProjectP3.dir/src/Gestor.cpp.s
+.PHONY : src/Gestor.cpp.s
+
 src/MinStock.obj: src/MinStock.cpp.obj
 .PHONY : src/MinStock.obj
 
@@ -396,6 +420,9 @@ help:
 	@echo ... src/CantArtDif.obj
 	@echo ... src/CantArtDif.i
 	@echo ... src/CantArtDif.s
+	@echo ... src/Gestor.obj
+	@echo ... src/Gestor.i
+	@echo ... src/Gestor.s
 	@echo ... src/MinStock.obj
 	@echo ... src/MinStock.i
 	@echo ... src/MinStock.s

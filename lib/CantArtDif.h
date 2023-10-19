@@ -11,7 +11,7 @@
 
 class CantArtDiff {
 public:
-    CantArtDiff(float width, float height);
+    CantArtDiff(float width, float height, std::string text);
     void draw(sf::RenderWindow &window);
     std::string text;
     ~CantArtDiff();
