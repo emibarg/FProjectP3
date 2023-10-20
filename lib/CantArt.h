@@ -10,11 +10,12 @@
 #include <SFML/Audio.hpp>
 class CantArt {
 public:
-    CantArt(float width, float height);
+    CantArt(float width, float height, std::string text);
     void draw(sf::RenderWindow &window);
-    std::string text;
+
     ~CantArt();
 private:
+    std::string text;
     sf::SoundBuffer CantArtS;
     sf::Sound CantArtSound;
     sf::Font font;

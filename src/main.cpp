@@ -11,7 +11,7 @@
 #include "../lib/Producto.h"
 #include "../lib/Gestor.h"
 int main() {
-    Gestor gestor("../assets/Inventariado Fisico.csv");
+    Gestor gestor("../assets/Inventariado Fisico2.csv");
     gestor.leerArchivo();
 
     sf::RenderWindow MENU(sf::VideoMode(800, 600), "Menu", sf::Style::Default);
@@ -76,7 +76,7 @@ int main() {
                         // Handle "Cantidad total de artículos." menu option
                         // Create a new window or transition to a new state.
                         sf::RenderWindow CantArtW(sf::VideoMode(800, 600), "Cantidad total de artículos diferentes.");
-                        CantArt CantArt(CantArtW.getSize().x, CantArtW.getSize().y);
+                        CantArt CantArt(CantArtW.getSize().x, CantArtW.getSize().y, std::to_string(gestor.getTotalArt()));
                         // The event loop for the new window
                         while (CantArtW.isOpen()) {
                             sf::Event event;
@@ -97,7 +97,8 @@ int main() {
                     } else if (selectedItem == 2) {
                         sf::RenderWindow MinStockW(sf::VideoMode(800, 600), "Cantidad total de artículos diferentes.");
                         MinStock MinStock(MinStockW.getSize().x, MinStockW.getSize().y);
-                        // The event loop for the new window
+
+// The event loop for the new window
                         while (MinStockW.isOpen()) {
                             sf::Event event;
                             while (MinStockW.pollEvent(event)) {
@@ -107,11 +108,13 @@ int main() {
                                 // Handle other events specific to this window
                             }
 
+                            // Call the update method of the MinStock object to handle user input
+                            MinStock.update(MinStockW);
+
                             MinStockW.clear();
                             // Draw and update the contents of this window
-
                             MinStockW.draw(background);
-                            MinStock.draw(MinStockW);
+                            MinStock.draw(MinStockW); // Call the draw method to display the MinStock information
                             MinStockW.display();
                         }
 

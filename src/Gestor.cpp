@@ -39,6 +39,7 @@ void Gestor::leerArchivo() {
     std::string nombre;
     std::string codigo;
     std::vector<int> depositos;
+    int sum_stock = 0;
 
     bool firstLine = true;  // Flag to skip the first line
 
@@ -52,7 +53,7 @@ void Gestor::leerArchivo() {
         std::string token;
         int i = 0;
 
-        while (getline(ss, token, ',')) {
+        while (getline(ss, token, ';')) {
             if (i == 1) {
                 codigo = token;
             } else if (i == 2) {
@@ -61,13 +62,10 @@ void Gestor::leerArchivo() {
                 if (token.empty()) {
                     depositos.push_back(0);
                 } else {
-                    try {
-                        int deposito = std::stoi(token);
-                        depositos.push_back(deposito);
-                    } catch (const std::invalid_argument& e) {
-                        std::cerr << "Invalid input: " << e.what() << " on line: " << line << std::endl;
+                       depositos.push_back(std::stoi(token));
+                       sum_stock += std::stoi(token);
                     }
-                }
+
             }
             i++;
         }
@@ -76,6 +74,6 @@ void Gestor::leerArchivo() {
         cargarMapa(nombre, producto);
         depositos.clear();
     }
-
+    setTotalArt(sum_stock);
     setTotalArtDif(m_productos.size());
 }

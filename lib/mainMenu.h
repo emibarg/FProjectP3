@@ -7,7 +7,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #define x_axis 150
-#define y_axis 200
+#define y_axis 50
 #define max_main_menu 4
 class mainMenu {
 public:

@@ -15,8 +15,11 @@ public:
     void draw(sf::RenderWindow &window);
     std::string text;
     ~MinStock();
+    void update(sf::RenderWindow &window);
 
 private:
+    sf::Text userInputText;
+    std::string userInputString;
     sf::SoundBuffer MinStockS;
     sf::Sound MinStockSound;
     sf::Font font;

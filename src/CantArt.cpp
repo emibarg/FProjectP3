@@ -4,13 +4,13 @@
 #include <iostream>
 #include "../lib/CantArt.h"
 #include <SFML/Graphics.hpp>
-CantArt::CantArt(float width, float height) {
+CantArt::CantArt(float width, float height, std::string text) {
     CantArtS.loadFromFile("../music/CantArt.wav");
     CantArtSound.setBuffer(CantArtS);
     CantArtSound.setVolume(100);
     CantArtSound.play();
 
-    text = "7";
+    text = text;
     if(!font.loadFromFile("../fonts/a-charming-font/Achafexp.ttf")){
         std::cout << "Error loading font" << std::endl;
     }
