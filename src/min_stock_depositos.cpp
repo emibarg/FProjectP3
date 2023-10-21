@@ -41,7 +41,9 @@ std::vector<Producto> MinStockDepositos::min_stock(int n, int deposito) {
 }
 
 /* 
-std::vector<Producto> MinStockDepositos::min_stock(int n, int deposito) {
+intento con cola de prioridad para ordenar los productos por cantidad de stock
+
+ std::vector<Producto> MinStockDepositos::min_stock(int n, int deposito) {
     std::priority_queue<Producto, std::vector<Producto>, std::greater<Producto>> productos_min_stock;
     for (auto& producto : productos) {
         std::vector<int> depositos = producto.getDepositos();
