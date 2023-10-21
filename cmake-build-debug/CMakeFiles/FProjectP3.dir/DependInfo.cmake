@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "F:/DTodoUPoco/1 UNIVERSIDAD/2 ano/Prog3/FProjectP3/src/MinStock.cpp" "CMakeFiles/FProjectP3.dir/src/MinStock.cpp.obj" "gcc" "CMakeFiles/FProjectP3.dir/src/MinStock.cpp.obj.d"
   "F:/DTodoUPoco/1 UNIVERSIDAD/2 ano/Prog3/FProjectP3/src/main.cpp" "CMakeFiles/FProjectP3.dir/src/main.cpp.obj" "gcc" "CMakeFiles/FProjectP3.dir/src/main.cpp.obj.d"
   "F:/DTodoUPoco/1 UNIVERSIDAD/2 ano/Prog3/FProjectP3/src/mainMenu.cpp" "CMakeFiles/FProjectP3.dir/src/mainMenu.cpp.obj" "gcc" "CMakeFiles/FProjectP3.dir/src/mainMenu.cpp.obj.d"
+  "F:/DTodoUPoco/1 UNIVERSIDAD/2 ano/Prog3/FProjectP3/src/min_stock_depositos.cpp" "CMakeFiles/FProjectP3.dir/src/min_stock_depositos.cpp.obj" "gcc" "CMakeFiles/FProjectP3.dir/src/min_stock_depositos.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

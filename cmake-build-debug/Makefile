@@ -395,6 +395,30 @@ src/mainMenu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\FProjectP3.dir\build.make CMakeFiles/FProjectP3.dir/src/mainMenu.cpp.s
 .PHONY : src/mainMenu.cpp.s
 
+src/min_stock_depositos.obj: src/min_stock_depositos.cpp.obj
+.PHONY : src/min_stock_depositos.obj
+
+# target to build an object file
+src/min_stock_depositos.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\FProjectP3.dir\build.make CMakeFiles/FProjectP3.dir/src/min_stock_depositos.cpp.obj
+.PHONY : src/min_stock_depositos.cpp.obj
+
+src/min_stock_depositos.i: src/min_stock_depositos.cpp.i
+.PHONY : src/min_stock_depositos.i
+
+# target to preprocess a source file
+src/min_stock_depositos.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\FProjectP3.dir\build.make CMakeFiles/FProjectP3.dir/src/min_stock_depositos.cpp.i
+.PHONY : src/min_stock_depositos.cpp.i
+
+src/min_stock_depositos.s: src/min_stock_depositos.cpp.s
+.PHONY : src/min_stock_depositos.s
+
+# target to generate assembly for a file
+src/min_stock_depositos.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\FProjectP3.dir\build.make CMakeFiles/FProjectP3.dir/src/min_stock_depositos.cpp.s
+.PHONY : src/min_stock_depositos.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -432,6 +456,9 @@ help:
 	@echo ... src/mainMenu.obj
 	@echo ... src/mainMenu.i
 	@echo ... src/mainMenu.s
+	@echo ... src/min_stock_depositos.obj
+	@echo ... src/min_stock_depositos.i
+	@echo ... src/min_stock_depositos.s
 .PHONY : help
 
 

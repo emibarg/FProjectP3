@@ -39,7 +39,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 22,
+				"line" : 24,
 				"parent" : 0
 			},
 			{
@@ -182,7 +182,8 @@
 				3,
 				5,
 				7,
-				9
+				9,
+				10
 			]
 		}
 	],
@@ -318,7 +319,8 @@
 				3,
 				5,
 				7,
-				9
+				9,
+				10
 			]
 		},
 		{
@@ -328,7 +330,8 @@
 				2,
 				4,
 				6,
-				8
+				8,
+				11
 			]
 		}
 	],
@@ -389,6 +392,17 @@
 			"compileGroupIndex" : 0,
 			"path" : "src/Gestor.cpp",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/min_stock_depositos.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "lib/min_stock_depositos.h",
+			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"

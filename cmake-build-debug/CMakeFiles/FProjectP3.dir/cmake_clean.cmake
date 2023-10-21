@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/FProjectP3.dir/src/main.cpp.obj.d"
   "CMakeFiles/FProjectP3.dir/src/mainMenu.cpp.obj"
   "CMakeFiles/FProjectP3.dir/src/mainMenu.cpp.obj.d"
+  "CMakeFiles/FProjectP3.dir/src/min_stock_depositos.cpp.obj"
+  "CMakeFiles/FProjectP3.dir/src/min_stock_depositos.cpp.obj.d"
   "FProjectP3.exe"
   "FProjectP3.exe.manifest"
   "FProjectP3.pdb"
