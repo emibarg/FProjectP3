@@ -18,6 +18,10 @@ int main() {
     Gestor gestor("../assets/Inventariado Fisico2.csv");
     gestor.leerArchivo();
 
+
+
+
+
     // Crea una ventana de SFML llamada MENU
     sf::RenderWindow MENU(sf::VideoMode(800, 600), "Menu", sf::Style::Default);
 

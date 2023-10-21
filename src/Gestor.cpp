@@ -49,11 +49,20 @@ void Gestor::leerArchivo() {
     std::string codigo;
     std::vector<int> depositos;
     int sum_stock = 0;
+    int columnas = 0;
     bool firstLine = true;  // Bandera para omitir la primera línea del archivo
 
     while (getline(m_archivo, line)) {
         if (firstLine) {
             firstLine = false;
+
+            // Contar la cantidad de columnas
+            std::stringstream SS(line);
+            std::string relleno;
+            while (getline(SS, relleno, ';')) {
+                columnas++;
+            }
+
             continue; // Omitir la primera línea
         }
 
@@ -61,7 +70,9 @@ void Gestor::leerArchivo() {
         std::string token;
         int i = 0;
 
-        while (getline(ss, token, ';')) {
+        while (i<columnas) {
+            getline(ss, token, ';');
+
             if (i == 1) {
                 codigo = token;
             } else if (i == 2) {
@@ -84,4 +95,26 @@ void Gestor::leerArchivo() {
 
     setTotalArt(sum_stock);
     setTotalArtDif(m_productos.size());
+}
+
+int Gestor::stock(std::string nombre_articulo) {
+
+    Producto n = m_productos[nombre_articulo]; // Busca en el Hash ese articulo
+
+    std::vector<int> depositos_n = n.getDepositos(); // Accedemos a la lista de depositos
+
+    // Sumamos todos los depositos
+    int sum_stock = 0;
+    for (int i = 0; i < depositos_n.size(); ++i) {
+        sum_stock += depositos_n[i];
+    }
+
+    // Return sumatoria
+    return sum_stock;
+}
+
+int Gestor::stock(std::string nombre_articulo, int deposito) {
+    // Devuelve el stock de un producto en un depósito
+
+    return m_productos[nombre_articulo].getDepositos()[deposito];
 }
