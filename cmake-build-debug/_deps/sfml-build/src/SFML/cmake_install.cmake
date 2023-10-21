@@ -1,8 +1,8 @@
-# Install script for directory: /home/emi/Documents/Code/cpp/FProjectP3/cmake-build-debug/_deps/sfml-src/src/SFML
+# Install script for directory: F:/DTodoUPoco/1 UNIVERSIDAD/2 ano/Prog3/FProjectP3/cmake-build-debug/_deps/sfml-src/src/SFML
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/FProjectP3")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -27,11 +27,6 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   endif()
 endif()
 
-# Install shared libraries without execute permission?
-if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  set(CMAKE_INSTALL_SO_NO_EXE "0")
-endif()
-
 # Is this installation the result of a crosscompile?
 if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
@@ -39,16 +34,17 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "F:/apps/Clion/CLion 2023.2.2/bin/mingw/bin/objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/emi/Documents/Code/cpp/FProjectP3/cmake-build-debug/_deps/sfml-build/src/SFML/System/cmake_install.cmake")
-  include("/home/emi/Documents/Code/cpp/FProjectP3/cmake-build-debug/_deps/sfml-build/src/SFML/Window/cmake_install.cmake")
-  include("/home/emi/Documents/Code/cpp/FProjectP3/cmake-build-debug/_deps/sfml-build/src/SFML/Network/cmake_install.cmake")
-  include("/home/emi/Documents/Code/cpp/FProjectP3/cmake-build-debug/_deps/sfml-build/src/SFML/Graphics/cmake_install.cmake")
-  include("/home/emi/Documents/Code/cpp/FProjectP3/cmake-build-debug/_deps/sfml-build/src/SFML/Audio/cmake_install.cmake")
+  include("F:/DTodoUPoco/1 UNIVERSIDAD/2 ano/Prog3/FProjectP3/cmake-build-debug/_deps/sfml-build/src/SFML/System/cmake_install.cmake")
+  include("F:/DTodoUPoco/1 UNIVERSIDAD/2 ano/Prog3/FProjectP3/cmake-build-debug/_deps/sfml-build/src/SFML/Main/cmake_install.cmake")
+  include("F:/DTodoUPoco/1 UNIVERSIDAD/2 ano/Prog3/FProjectP3/cmake-build-debug/_deps/sfml-build/src/SFML/Window/cmake_install.cmake")
+  include("F:/DTodoUPoco/1 UNIVERSIDAD/2 ano/Prog3/FProjectP3/cmake-build-debug/_deps/sfml-build/src/SFML/Network/cmake_install.cmake")
+  include("F:/DTodoUPoco/1 UNIVERSIDAD/2 ano/Prog3/FProjectP3/cmake-build-debug/_deps/sfml-build/src/SFML/Graphics/cmake_install.cmake")
+  include("F:/DTodoUPoco/1 UNIVERSIDAD/2 ano/Prog3/FProjectP3/cmake-build-debug/_deps/sfml-build/src/SFML/Audio/cmake_install.cmake")
 
 endif()
 

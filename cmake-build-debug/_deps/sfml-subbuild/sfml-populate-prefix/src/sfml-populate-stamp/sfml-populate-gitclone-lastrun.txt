@@ -3,9 +3,9 @@
 # No other meaning or use of this file is supported.
 
 method=git
-command=/home/emi/Desktop/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake;-P;/home/emi/Documents/Code/cpp/FProjectP3/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/tmp/sfml-populate-gitclone.cmake
-source_dir=/home/emi/Documents/Code/cpp/FProjectP3/cmake-build-debug/_deps/sfml-src
-work_dir=/home/emi/Documents/Code/cpp/FProjectP3/cmake-build-debug/_deps
+command=F:/apps/Clion/CLion 2023.2.2/bin/cmake/win/x64/bin/cmake.exe;-P;F:/DTodoUPoco/1 UNIVERSIDAD/2 ano/Prog3/FProjectP3/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/tmp/sfml-populate-gitclone.cmake
+source_dir=F:/DTodoUPoco/1 UNIVERSIDAD/2 ano/Prog3/FProjectP3/cmake-build-debug/_deps/sfml-src
+work_dir=F:/DTodoUPoco/1 UNIVERSIDAD/2 ano/Prog3/FProjectP3/cmake-build-debug/_deps
 repository=https://github.com/SFML/SFML.git
 remote=origin
 init_submodules=TRUE
