@@ -13,7 +13,13 @@
 class Producto {
 public:
     // Constructores de la clase Producto.
-    Producto();  // Constructor por defecto.
+    Producto()// Constructor por defecto.
+    {
+        // Constructor por defecto que inicializa los miembros de la clase.
+        m_nombre = "";
+        m_codigo = "";
+        m_depositos = {};
+    }
     Producto(std::string nombre, std::string codigo, std::vector<int>* depositos) {
         // Constructor con parámetros que inicializa los miembros de la clase.
         m_nombre = nombre;
@@ -38,5 +44,6 @@ private:
     std::string m_nombre;        // Nombre del producto.
     std::vector<int> m_depositos; // Vector de enteros para representar depósitos asociados al producto.
 };
+
 
 #endif //FPROJECTP3_PRODUCTO_H

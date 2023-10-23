@@ -33,8 +33,8 @@ public:
     void total_art();
     void min_stock(int n);
     void min_stock(int n, int deposito);
-    void stock(std::string nombre_articulo);
-    void stock(std::string nombre_articulo, int deposito);
+    int stock(std::string nombre_articulo);
+    int stock(std::string nombre_articulo, int deposito);
     void max_stock(int n);
     Producto generarProducto(std::string nombre, std::string codigo, std::vector<int> depositos);
     void cargarMapa(std::string nombre, Producto producto);
@@ -54,10 +54,11 @@ public:
     void setTotalArt(int total_art){total_art_ = total_art;}
 
     ~Gestor();
-    private:
+private:
     std::unordered_map<std::string, Producto> m_productos;
     int total_art_dif_;
     int total_art_;
+
     std::priority_queue<int> m_min_stock;
     std::priority_queue<int> m_max_stock;
     std::priority_queue<int> m_min_stock_deposito;
