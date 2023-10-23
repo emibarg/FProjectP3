@@ -32,9 +32,9 @@ public:
     void total_art_dif();
     void total_art();
     void min_stock(int n);
-    void min_stock(int n, int deposito);
-    void stock(std::string nombre_articulo);
-    void stock(std::string nombre_articulo, int deposito);
+    void min_stock(int n, int deposito, std::vector<Producto> &productos_min_stock); //hecho fran
+    void stock(std::string nombre_articulo); //hecho nico
+    void stock(std::string nombre_articulo, int deposito); //hecho nico
     void max_stock(int n);
     Producto generarProducto(std::string nombre, std::string codigo, std::vector<int> depositos);
     void cargarMapa(std::string nombre, Producto producto);

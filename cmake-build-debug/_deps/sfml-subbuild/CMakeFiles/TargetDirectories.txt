@@ -1,3 +1,0 @@
-F:/DTodoUPoco/1 UNIVERSIDAD/2 ano/Prog3/FProjectP3/cmake-build-debug/_deps/sfml-subbuild/CMakeFiles/sfml-populate.dir
-F:/DTodoUPoco/1 UNIVERSIDAD/2 ano/Prog3/FProjectP3/cmake-build-debug/_deps/sfml-subbuild/CMakeFiles/edit_cache.dir
-F:/DTodoUPoco/1 UNIVERSIDAD/2 ano/Prog3/FProjectP3/cmake-build-debug/_deps/sfml-subbuild/CMakeFiles/rebuild_cache.dir

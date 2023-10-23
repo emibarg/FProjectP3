@@ -2,19 +2,19 @@
 // Created by pc on 20/10/2023.
 //
 
-#include "../lib/min_stock_depositos.h"
+#include "../lib/min_stock_depositos-NoTENERmuchoEnCuenta.h"
 
 #include <fstream>
 #include <sstream>
 
 MinStockDepositos::MinStockDepositos(std::string ubicacion_archivo) {
-    std::ifstream archivo(ubicacion_archivo);
-    std::string linea;
-    while (std::getline(archivo, linea)) {
-        std::stringstream ss(linea);
-        std::string grupo, codigo;
-        std::vector<int> depositos;
-        std::string deposito;
+    std::ifstream archivo(ubicacion_archivo); // Abre el archivo
+    std::string linea; // Variable para almacenar cada línea del archivo
+    while (std::getline(archivo, linea)) { // Lee una línea
+        std::stringstream ss(linea); // Lee la línea como una cadena de caracteres
+        std::string grupo, codigo; // Variables para almacenar el grupo y el código del producto
+        std::vector<int> depositos; // Vector para almacenar los depósitos del producto
+        std::string deposito; // Variable para almacenar cada depósito
         std::getline(ss, grupo, ',');
         std::getline(ss, codigo, ',');
         while (std::getline(ss, deposito, ',')) {

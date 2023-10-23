@@ -1,9 +1,7 @@
 //
 // Created by emi on 10/19/23.
 //
-#include "../lib/Gestor.h"
-
-// Constructor por defecto de la clase Gestor
+#include "../lib/Gestor.h"// Constructor por defecto de la clase Gestor
 Gestor::Gestor() {
     total_art_dif_ = 0;
     total_art_ = 0;
@@ -84,4 +82,18 @@ void Gestor::leerArchivo() {
 
     setTotalArt(sum_stock);
     setTotalArtDif(m_productos.size());
+}
+
+//metodo para mostrar los productos que tienen stock menor a n en el deposito ingresado
+void Gestor::min_stock(int n, int deposito, std::vector<Producto> &productos_min_stock) {
+
+    for (auto& producto : m_productos) { // recorremos el mapa de productos
+
+        std::vector<int> depositos = producto.second.getDepositos(); // obtenemos los depositos del producto
+
+        if (depositos.size() > deposito && depositos[deposito] <=
+                                           n) { // si el producto tiene mas depositos que el ingresado y el stock del deposito ingresado es menor a n
+            productos_min_stock.push_back(producto.second); // lo metemos en la cola de prioridad
+        }
+    }
 }
