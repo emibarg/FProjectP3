@@ -32,9 +32,9 @@ public:
     void total_art_dif();
     void total_art();
     void min_stock(int n);
-    void min_stock(int n, int deposito, std::vector<Producto> &productos_min_stock); //hecho fran
-    void stock(std::string nombre_articulo); //hecho nico
-    void stock(std::string nombre_articulo, int deposito); //hecho nico
+    void min_stock(int n, int deposito); //hecho
+    void stock(std::string nombre_articulo); //hecho
+    void stock(std::string nombre_articulo, int deposito); //hecho
     void max_stock(int n);
     Producto generarProducto(std::string nombre, std::string codigo, std::vector<int> depositos);
     void cargarMapa(std::string nombre, Producto producto);
@@ -48,7 +48,7 @@ public:
     int getTotalArt()const{return total_art_;}
     std::priority_queue<int> getMinStock()const{return m_min_stock;}
     std::priority_queue<int> getMaxStock()const{return m_max_stock;}
-    std::priority_queue<int> getMinStockDeposito()const{return m_min_stock_deposito;}
+    std::vector<Producto> getMinStockDeposito()const{return m_min_stock_deposito;}
     void setTotalArtDif(int total_art_dif){
         total_art_dif_ = total_art_dif;}
     void setTotalArt(int total_art){total_art_ = total_art;}
@@ -59,8 +59,8 @@ public:
     int total_art_dif_;
     int total_art_;
     std::priority_queue<int> m_min_stock;
-    std::priority_queue<int> m_max_stock;
-    std::priority_queue<int> m_min_stock_deposito;
+    std::vector<Producto> m_max_stock;
+    std::vector<Producto> m_min_stock_deposito;
     std::ifstream m_archivo;
     std::string m_ubicacion_archivo;
 };

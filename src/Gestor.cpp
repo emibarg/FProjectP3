@@ -85,15 +85,30 @@ void Gestor::leerArchivo() {
 }
 
 //metodo para mostrar los productos que tienen stock menor a n en el deposito ingresado
-void Gestor::min_stock(int n, int deposito, std::vector<Producto> &productos_min_stock) {
+void Gestor::min_stock(int n, int deposito) {
 
     for (auto& producto : m_productos) { // recorremos el mapa de productos
 
         std::vector<int> depositos = producto.second.getDepositos(); // obtenemos los depositos del producto
 
-        if (depositos.size() > deposito && depositos[deposito] <=
-                                           n) { // si el producto tiene mas depositos que el ingresado y el stock del deposito ingresado es menor a n
-            productos_min_stock.push_back(producto.second); // lo metemos en la cola de prioridad
+        if (depositos.size() > deposito && depositos[deposito] <=n) { // si el producto tiene mas depositos que el ingresado y el stock del deposito ingresado es menor a n
+            m_min_stock_deposito.push_back(producto.second); // lo metemos en la cola de prioridad
+        }
+    }
+}
+
+void Gestor::max_stock(int n) {
+    int suma_stock = 0; // inicializamos la suma
+    for (auto &producto: m_productos) { // recorremos el mapa de productos
+        std::vector<int> depositos = producto.second.getDepositos(); // obtenemos los depositos del producto
+        suma_stock = 0; // inicializamos la suma
+
+        for(int i : depositos){ // recorremos los depositos
+            suma_stock += i; // sumamos el stock de cada deposito
+        } // si la suma es mayor a n
+
+        if(suma_stock > n){ // si la suma es mayor a n lo metemos en la cola de prioridad
+            m_max_stock.push_back(producto.second); // lo metemos en la cola de prioridad
         }
     }
 }
