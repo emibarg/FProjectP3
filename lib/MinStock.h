@@ -9,13 +9,13 @@
 #define listArtSize 3
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
+#include "Producto.h"
 class MinStock {
 public:
-    MinStock(float width, float height);
-    void draw(sf::RenderWindow &window);
-    std::string text;
+    MinStock(float width, float height,std::vector<Producto>items, int n);
+
     ~MinStock();
-    void update(sf::RenderWindow &window);
+
 
 private:
     sf::Text userInputText;
@@ -23,8 +23,8 @@ private:
     sf::SoundBuffer MinStockS;
     sf::Sound MinStockSound;
     sf::Font font;
-    sf::Text MinStockText;
-    sf::Text MinStockList[listArtSize];
+
+
 
 };
 

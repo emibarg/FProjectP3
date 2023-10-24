@@ -1,0 +1,2 @@
+"D:\Program Files\CLion 2023.2.2\bin\mingw\bin\ar.exe" qc ..\..\..\lib\libsfml-main-d.a "CMakeFiles/sfml-main.dir/MainWin32.cpp.obj"
+"D:\Program Files\CLion 2023.2.2\bin\mingw\bin\ranlib.exe" ..\..\..\lib\libsfml-main-d.a

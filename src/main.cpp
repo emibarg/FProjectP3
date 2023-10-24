@@ -27,7 +27,11 @@ int main() {
     // Inicializa el fondo de la ventana
     sf::RectangleShape background(sf::Vector2f(800.0f, 600.0f));
     sf::Texture mainTexture;
-
+    //Fuente
+    sf::Font fuente;
+    if (!fuente.loadFromFile("../fonts/a-charming-font/Achafexp.ttf")) {
+        std::cout << "Error loading font" << std::endl;
+    }
     // Carga la textura del fondo desde un archivo
     if (!mainTexture.loadFromFile("../background/demonwpp.jpg")) {
         std::cerr << "Failed to load background texture!" << std::endl;
@@ -104,26 +108,72 @@ int main() {
                         }
                     } else if (selectedItem == 2) {
                         // Handle "Cantidad mínima de stock" menu option
-                        sf::RenderWindow MinStockW(sf::VideoMode(800, 600), "Cantidad mínima de stock");
-                        MinStock MinStock(MinStockW.getSize().x, MinStockW.getSize().y);
+                        // Create an SFML text input field for 'n'.
+                        sf::Text inputText;
+                        sf::String inputString;
+                        inputText.setFont(fuente);
+                        inputText.setCharacterSize(70);
+                        inputText.setPosition(355, 100);
+                        //Text for button
+                        sf::Text submitText;
+                        submitText.setFont(fuente);
+                        submitText.setFillColor(sf::Color::White);
+                        submitText.setString("Submit");
+                        submitText.setCharacterSize(40);
+                        submitText.setPosition(352, 195);
+                        // Create a submit button.
+                        sf::RectangleShape submitButton(sf::Vector2f(100, 40));
+                        submitButton.setPosition(350, 200);
+                        submitButton.setFillColor(sf::Color::Black);
+                        submitButton.setOutlineColor(sf::Color::White);
+                        submitButton.setOutlineThickness(2);
 
-                        // Bucle de eventos para la nueva ventana
-                        while (MinStockW.isOpen()) {
+
+                        sf::RenderWindow window(sf::VideoMode(800, 600), "MinStock");
+                        window.clear();
+
+                        while (window.isOpen()) {
+                            window.draw(background);
+                            window.draw(inputText);
+                            window.draw(submitButton);
+                            window.draw(submitText);
+                            window.display();
                             sf::Event event;
-                            while (MinStockW.pollEvent(event)) {
-                                if (event.key.code == sf::Keyboard::Escape) {
-                                    MinStockW.close();
+                            while (window.pollEvent(event)) {
+                                if (event.type == sf::Event::Closed) {
+                                    window.close();
                                 }
-                                // Maneja otros eventos específicos de esta ventana
-                            }
 
-                            MinStock.update(MinStockW); // Llama al método update para manejar la entrada del usuario
-                            MinStockW.clear();
-                            MinStockW.draw(background);
-                            MinStock.draw(MinStockW); // Llama al método draw para mostrar información de MinStock
-                            MinStockW.display();
+                                if (event.type == sf::Event::TextEntered) {
+                                    if (event.text.unicode < 128) {
+                                        inputString += static_cast<char>(event.text.unicode);
+                                        inputText.setString(inputString);
+                                    }
+                                }
+
+                                if (event.type == sf::Event::MouseButtonPressed) {
+                                    if (submitButton.getGlobalBounds().contains(sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
+                                        // The submit button was clicked. Convert inputString to an integer and call minstock(n).
+                                        int n = std::stoi(inputString.toAnsiString());
+                                        // Call your minstock(n) function and store the results in minStockItems.
+                                        std::vector<Producto> items = gestor.min_stock(n);
+                                        std::cout<<items.size()<<std::endl;
+
+
+
+
+                                        // Create a new window for "Cantidad mínima de stock"
+                                        sf::RenderWindow MinStockW(sf::VideoMode(800, 600), "Cantidad mínima de stock");
+                                        MinStock MinStock(MinStockW.getSize().x, MinStockW.getSize().y, items, n);
+                                        items.clear();
+
+                                    }
+                                }
+                            }
                         }
-                    } else if (selectedItem == 3) {
+
+                    }
+                    else if (selectedItem == 3) {
                         MENU.close(); // Cierra la ventana principal para salir del programa
                     }
                 }

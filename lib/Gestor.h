@@ -31,7 +31,7 @@ public:
     void leerArchivo();
     void total_art_dif();
     void total_art();
-    void min_stock(int n);
+    std::vector<Producto> min_stock(int n);
     void min_stock(int n, int deposito);
     int stock(std::string nombre_articulo);
     int stock(std::string nombre_articulo, int deposito);
@@ -46,9 +46,6 @@ public:
     std::unordered_map<std::string, Producto> getProductos()const{return m_productos;}
     int getTotalArtDif()const{return total_art_dif_;}
     int getTotalArt()const{return total_art_;}
-    std::priority_queue<int> getMinStock()const{return m_min_stock;}
-    std::priority_queue<int> getMaxStock()const{return m_max_stock;}
-    std::priority_queue<int> getMinStockDeposito()const{return m_min_stock_deposito;}
     void setTotalArtDif(int total_art_dif){
         total_art_dif_ = total_art_dif;}
     void setTotalArt(int total_art){total_art_ = total_art;}
@@ -58,10 +55,9 @@ private:
     std::unordered_map<std::string, Producto> m_productos;
     int total_art_dif_;
     int total_art_;
-
-    std::priority_queue<int> m_min_stock;
-    std::priority_queue<int> m_max_stock;
-    std::priority_queue<int> m_min_stock_deposito;
+    std::vector<Producto> m_min_stock;
+    std::vector<Producto> m_max_stock;
+    std::vector<Producto> m_min_stock_deposito;
     std::ifstream m_archivo;
     std::string m_ubicacion_archivo;
 };
