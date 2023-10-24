@@ -13,10 +13,39 @@
 #include "../lib/Producto.h"
 #include "../lib/Gestor.h"
 
-int main() {
+int main(int argc, char** argv) {
+    // Agregar reloj para controlar el tiempo de ejecución
+
+    std::string archivo = argv[argc - 1];
+
+
     // Crea un objeto Gestor y carga datos desde un archivo CSV
     Gestor gestor("../assets/Inventariado Fisico2.csv");
     gestor.leerArchivo();
+
+    /*
+     * Crea el gestor con el comando.
+     *
+     * Gestor gestor(archivo);
+     *
+     */
+
+    if(argc > 2) // Si hay mas argumentos que solo la main y el archivo
+    {
+        std::string comando = argv[1];
+
+        if(comando == "-min_stock"){ // Armar vector ordenado de menor a mayor
+
+        }else if(comando == "-max_Stock"){ // Armar vector ordenado de mayor a menor
+
+        }else{ // Armar el hashmap
+            gestor.leerArchivo();
+        }
+    }else{ // Interfaz grafica
+
+
+
+    }
 
 
 
