@@ -279,4 +279,5 @@ CMakeFiles/FProjectP3.dir/src/main.cpp.obj: \
  D:/Program\ Files/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/deque \
  D:/Program\ Files/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_deque.h \
  D:/Program\ Files/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/deque.tcc \
- D:/Program\ Files/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_queue.h
+ D:/Program\ Files/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_queue.h \
+ C:/Users/Emiliano\ Barg/Desktop/FProjectP3/lib/MaxStock.h

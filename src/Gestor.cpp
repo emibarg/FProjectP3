@@ -127,7 +127,8 @@ void Gestor::min_stock(int n, int deposito) {
     }
 }
 
-void Gestor::max_stock(int n) {
+std::vector<Producto> Gestor::max_stock(int n) {
+    m_max_stock.clear(); // limpiamos la cola de prioridad
     int suma_stock = 0; // inicializamos la suma
     for (auto &producto: m_productos) { // recorremos el mapa de productos
         std::vector<int> depositos = producto.second.getDepositos(); // obtenemos los depositos del producto
@@ -141,9 +142,12 @@ void Gestor::max_stock(int n) {
             m_max_stock.push_back(producto.second); // lo metemos en la cola de prioridad
         }
     }
+    return m_max_stock; // devolvemos la cola de prioridad
 }
 std::vector<Producto> Gestor::min_stock(int n) {
+    m_min_stock.clear();
     for (const auto& producto : m_productos) {
+
         const std::vector<int>& depositos = producto.second.getDepositos();
         int suma_stock = 0;
 

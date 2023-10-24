@@ -16,6 +16,7 @@ mainMenu::mainMenu(float width, float height) {
             "Cantidad total de articulos diferentes",
             "Cantidad total de articulos",
             "Minimo de stock",
+            "Maximo de stock",
             "Salir"
     };
 
@@ -32,6 +33,7 @@ mainMenu::mainMenu(float width, float height) {
     mainMenuText[1].setFillColor(sf::Color::White);
     mainMenuText[2].setFillColor(sf::Color::White);
     mainMenuText[3].setFillColor(sf::Color::White);
+    mainMenuText[4].setFillColor(sf::Color::White);
 
     mainMenuSelected = 0;  // Inicializa la opción seleccionada como la primera.
 }

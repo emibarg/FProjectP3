@@ -35,7 +35,7 @@ public:
     void min_stock(int n, int deposito);
     int stock(std::string nombre_articulo);
     int stock(std::string nombre_articulo, int deposito);
-    void max_stock(int n);
+    std::vector<Producto>max_stock(int n);
     Producto generarProducto(std::string nombre, std::string codigo, std::vector<int> depositos);
     void cargarMapa(std::string nombre, Producto producto);
     void cargarMinStock(Producto producto, int n);

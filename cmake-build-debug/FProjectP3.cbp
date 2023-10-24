@@ -1173,6 +1173,9 @@
 		<Unit filename="C:/Users/Emiliano Barg/Desktop/FProjectP3/lib/CantArtDif.h">
 			<Option target="FProjectP3"/>
 		</Unit>
+		<Unit filename="C:/Users/Emiliano Barg/Desktop/FProjectP3/lib/MaxStock.h">
+			<Option target="FProjectP3"/>
+		</Unit>
 		<Unit filename="C:/Users/Emiliano Barg/Desktop/FProjectP3/lib/MinStock.h">
 			<Option target="FProjectP3"/>
 		</Unit>
@@ -1186,6 +1189,9 @@
 			<Option target="FProjectP3"/>
 		</Unit>
 		<Unit filename="C:/Users/Emiliano Barg/Desktop/FProjectP3/src/Gestor.cpp">
+			<Option target="FProjectP3"/>
+		</Unit>
+		<Unit filename="C:/Users/Emiliano Barg/Desktop/FProjectP3/src/MaxStock.cpp">
 			<Option target="FProjectP3"/>
 		</Unit>
 		<Unit filename="C:/Users/Emiliano Barg/Desktop/FProjectP3/src/MinStock.cpp">

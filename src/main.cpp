@@ -12,6 +12,7 @@
 #include "../lib/MinStock.h"
 #include "../lib/Producto.h"
 #include "../lib/Gestor.h"
+#include "../lib/MaxStock.h"
 
 int main() {
     // Crea un objeto Gestor y carga datos desde un archivo CSV
@@ -173,7 +174,71 @@ int main() {
                         }
 
                     }
-                    else if (selectedItem == 3) {
+                    else if (selectedItem ==3){
+                        // Handle "Cantidad mínima de stock" menu option
+                        // Create an SFML text input field for 'n'.
+                        sf::Text inputText;
+                        sf::String inputString;
+                        inputText.setFont(fuente);
+                        inputText.setCharacterSize(70);
+                        inputText.setPosition(355, 100);
+                        //Text for button
+                        sf::Text submitText;
+                        submitText.setFont(fuente);
+                        submitText.setFillColor(sf::Color::White);
+                        submitText.setString("Submit");
+                        submitText.setCharacterSize(40);
+                        submitText.setPosition(352, 195);
+                        // Create a submit button.
+                        sf::RectangleShape submitButton(sf::Vector2f(100, 40));
+                        submitButton.setPosition(350, 200);
+                        submitButton.setFillColor(sf::Color::Black);
+                        submitButton.setOutlineColor(sf::Color::White);
+                        submitButton.setOutlineThickness(2);
+
+                        sf::RenderWindow window(sf::VideoMode(800, 600), "MaxStock");
+                        window.clear();
+                        while (window.isOpen()) {
+                            window.draw(background);
+                            window.draw(inputText);
+                            window.draw(submitButton);
+                            window.draw(submitText);
+                            window.display();
+                            sf::Event event;
+                            while (window.pollEvent(event)) {
+                                if (event.type == sf::Event::Closed) {
+                                    window.close();
+                                }
+
+                                if (event.type == sf::Event::TextEntered) {
+                                    if (event.text.unicode < 128) {
+                                        inputString += static_cast<char>(event.text.unicode);
+                                        inputText.setString(inputString);
+                                    }
+                                }
+
+                                if (event.type == sf::Event::MouseButtonPressed) {
+                                    if (submitButton.getGlobalBounds().contains(sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
+                                        // The submit button was clicked. Convert inputString to an integer and call minstock(n).
+                                        int n = std::stoi(inputString.toAnsiString());
+                                        // Call your minstock(n) function and store the results in minStockItems.
+                                        std::vector<Producto> items = gestor.max_stock(n);
+                                        std::cout<<items.size()<<std::endl;
+
+
+
+
+                                        // Create a new window for "Cantidad mínima de stock"
+                                        sf::RenderWindow MaxStockW(sf::VideoMode(800, 600), "Cantidad mínima de stock");
+                                        MaxStock MaxStock(MaxStockW.getSize().x, MaxStockW.getSize().y, items, n);
+                                        items.clear();
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    else if (selectedItem == 4) {
                         MENU.close(); // Cierra la ventana principal para salir del programa
                     }
                 }

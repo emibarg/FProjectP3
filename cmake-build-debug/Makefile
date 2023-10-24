@@ -323,6 +323,30 @@ src/Gestor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\FProjectP3.dir\build.make CMakeFiles/FProjectP3.dir/src/Gestor.cpp.s
 .PHONY : src/Gestor.cpp.s
 
+src/MaxStock.obj: src/MaxStock.cpp.obj
+.PHONY : src/MaxStock.obj
+
+# target to build an object file
+src/MaxStock.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\FProjectP3.dir\build.make CMakeFiles/FProjectP3.dir/src/MaxStock.cpp.obj
+.PHONY : src/MaxStock.cpp.obj
+
+src/MaxStock.i: src/MaxStock.cpp.i
+.PHONY : src/MaxStock.i
+
+# target to preprocess a source file
+src/MaxStock.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\FProjectP3.dir\build.make CMakeFiles/FProjectP3.dir/src/MaxStock.cpp.i
+.PHONY : src/MaxStock.cpp.i
+
+src/MaxStock.s: src/MaxStock.cpp.s
+.PHONY : src/MaxStock.s
+
+# target to generate assembly for a file
+src/MaxStock.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\FProjectP3.dir\build.make CMakeFiles/FProjectP3.dir/src/MaxStock.cpp.s
+.PHONY : src/MaxStock.cpp.s
+
 src/MinStock.obj: src/MinStock.cpp.obj
 .PHONY : src/MinStock.obj
 
@@ -423,6 +447,9 @@ help:
 	@echo ... src/Gestor.obj
 	@echo ... src/Gestor.i
 	@echo ... src/Gestor.s
+	@echo ... src/MaxStock.obj
+	@echo ... src/MaxStock.i
+	@echo ... src/MaxStock.s
 	@echo ... src/MinStock.obj
 	@echo ... src/MinStock.i
 	@echo ... src/MinStock.s
