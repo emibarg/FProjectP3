@@ -13,7 +13,8 @@ MinStock::MinStock(float width, float height,std::vector<Producto>items,int n) {
     sf::Texture mainTexture;
     mainTexture.loadFromFile("../background/demonwpp.jpg");
     background.setTexture(&mainTexture);
-
+    sf::View view(sf::FloatRect(0, 0, 800, 600));
+    view.setViewport(sf::FloatRect(0, 0, 1.0f, 1.0f));
     std::vector<std::string> artList;
 
     if(!font.loadFromFile("../fonts/a-charming-font/Achafexp.ttf")){
@@ -37,15 +38,33 @@ MinStock::MinStock(float width, float height,std::vector<Producto>items,int n) {
                         itemListString += items[i].getNombre() + "\n";
                     }
                     itemListText.setString(itemListString);
+    sf::FloatRect textRect = itemListText.getLocalBounds();
+    while (itemListWindow.isOpen()) {
+        sf::Event itemListEvent;
+        while (itemListWindow.pollEvent(itemListEvent)) {
+            if (itemListEvent.type == sf::Event::Closed) {
+                itemListWindow.close();
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+                itemListWindow.close();
+            }
+        }
 
-                    while (itemListWindow.isOpen()) {
-                        sf::Event itemListEvent;
-                        while (itemListWindow.pollEvent(itemListEvent)) {
-                            if (itemListEvent.type == sf::Event::Closed) {
-                                itemListWindow.close();
-                            }
-                        }
-                        itemListWindow.clear();
+        // Define the scrolling speed
+        float scrollSpeed = 1.5f; // Adjust the value to control scrolling speed
+
+        // Check for keyboard input to scroll the view up
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && view.getCenter().y > view.getSize().y / 2) {
+            view.move(0, -scrollSpeed);
+        }
+
+        // Check for keyboard input to scroll the view down
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && view.getCenter().y < textRect.height - view.getSize().y / 2) {
+            view.move(0, scrollSpeed);
+        }
+
+        itemListWindow.clear();
+        itemListWindow.setView(view);
                         itemListWindow.draw(background);
                         itemListWindow.draw(itemListText);
                         itemListWindow.display();

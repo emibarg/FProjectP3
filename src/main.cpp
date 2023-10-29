@@ -144,7 +144,9 @@ int main() {
                                 if (event.type == sf::Event::Closed) {
                                     window.close();
                                 }
-
+                                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+                                    window.close();
+                                }
                                 if (event.type == sf::Event::TextEntered) {
                                     if (event.text.unicode < 128) {
                                         inputString += static_cast<char>(event.text.unicode);
@@ -175,7 +177,7 @@ int main() {
 
                     }
                     else if (selectedItem ==3){
-                        // Handle "Cantidad mínima de stock" menu option
+                        // Handle "Cantidad maxima de stock" menu option
                         // Create an SFML text input field for 'n'.
                         sf::Text inputText;
                         sf::String inputString;
@@ -209,7 +211,9 @@ int main() {
                                 if (event.type == sf::Event::Closed) {
                                     window.close();
                                 }
-
+                                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+                                    window.close();
+                                }
                                 if (event.type == sf::Event::TextEntered) {
                                     if (event.text.unicode < 128) {
                                         inputString += static_cast<char>(event.text.unicode);
@@ -221,7 +225,7 @@ int main() {
                                     if (submitButton.getGlobalBounds().contains(sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
                                         // The submit button was clicked. Convert inputString to an integer and call minstock(n).
                                         int n = std::stoi(inputString.toAnsiString());
-                                        // Call your minstock(n) function and store the results in minStockItems.
+                                        // Call maxStock(n) function and store the results in maxStockItems.
                                         std::vector<Producto> items = gestor.max_stock(n);
                                         std::cout<<items.size()<<std::endl;
 
