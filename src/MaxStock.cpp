@@ -5,7 +5,7 @@
 #include "../lib/MaxStock.h"
 #include <SFML/Graphics.hpp>
 MaxStock::MaxStock(float width, float height,std::vector<Producto>items,int n) {
-    MaxStockS.loadFromFile("../music/MinStockS.wav");
+    MaxStockS.loadFromFile("../music/MaxStockS.wav");
     MaxStockSound.setBuffer(MaxStockS);
     MaxStockSound.setVolume(100);
     MaxStockSound.play();
