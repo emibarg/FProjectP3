@@ -1179,6 +1179,9 @@
 		<Unit filename="C:/Users/Emiliano Barg/Desktop/FProjectP3/lib/MinStock.h">
 			<Option target="FProjectP3"/>
 		</Unit>
+		<Unit filename="C:/Users/Emiliano Barg/Desktop/FProjectP3/lib/MinStockDeposito.h">
+			<Option target="FProjectP3"/>
+		</Unit>
 		<Unit filename="C:/Users/Emiliano Barg/Desktop/FProjectP3/lib/Producto.h">
 			<Option target="FProjectP3"/>
 		</Unit>
@@ -1195,6 +1198,9 @@
 			<Option target="FProjectP3"/>
 		</Unit>
 		<Unit filename="C:/Users/Emiliano Barg/Desktop/FProjectP3/src/MinStock.cpp">
+			<Option target="FProjectP3"/>
+		</Unit>
+		<Unit filename="C:/Users/Emiliano Barg/Desktop/FProjectP3/src/MinStockDeposito.cpp">
 			<Option target="FProjectP3"/>
 		</Unit>
 		<Unit filename="C:/Users/Emiliano Barg/Desktop/FProjectP3/src/main.cpp">

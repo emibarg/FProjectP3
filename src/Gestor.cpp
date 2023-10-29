@@ -115,16 +115,17 @@ int Gestor::stock(std::string nombre_articulo, int deposito) {
 
     return m_productos[nombre_articulo].getDepositos()[deposito];
 }
-void Gestor::min_stock(int n, int deposito) {
-
+std::vector<Producto> Gestor::min_stock(int n, int deposito) {
+    m_min_stock_deposito.clear(); // limpiamos el vector
     for (auto& producto : m_productos) { // recorremos el mapa de productos
 
         std::vector<int> depositos = producto.second.getDepositos(); // obtenemos los depositos del producto
 
         if (depositos.size() > deposito && depositos[deposito] <=n) { // si el producto tiene mas depositos que el ingresado y el stock del deposito ingresado es menor a n
-            m_min_stock_deposito.push_back(producto.second); // lo metemos en la cola de prioridad
+            m_min_stock_deposito.push_back(producto.second); // vector
         }
     }
+    return m_min_stock_deposito;
 }
 
 std::vector<Producto> Gestor::max_stock(int n) {

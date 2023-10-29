@@ -371,6 +371,30 @@ src/MinStock.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\FProjectP3.dir\build.make CMakeFiles/FProjectP3.dir/src/MinStock.cpp.s
 .PHONY : src/MinStock.cpp.s
 
+src/MinStockDeposito.obj: src/MinStockDeposito.cpp.obj
+.PHONY : src/MinStockDeposito.obj
+
+# target to build an object file
+src/MinStockDeposito.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\FProjectP3.dir\build.make CMakeFiles/FProjectP3.dir/src/MinStockDeposito.cpp.obj
+.PHONY : src/MinStockDeposito.cpp.obj
+
+src/MinStockDeposito.i: src/MinStockDeposito.cpp.i
+.PHONY : src/MinStockDeposito.i
+
+# target to preprocess a source file
+src/MinStockDeposito.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\FProjectP3.dir\build.make CMakeFiles/FProjectP3.dir/src/MinStockDeposito.cpp.i
+.PHONY : src/MinStockDeposito.cpp.i
+
+src/MinStockDeposito.s: src/MinStockDeposito.cpp.s
+.PHONY : src/MinStockDeposito.s
+
+# target to generate assembly for a file
+src/MinStockDeposito.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\FProjectP3.dir\build.make CMakeFiles/FProjectP3.dir/src/MinStockDeposito.cpp.s
+.PHONY : src/MinStockDeposito.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -453,6 +477,9 @@ help:
 	@echo ... src/MinStock.obj
 	@echo ... src/MinStock.i
 	@echo ... src/MinStock.s
+	@echo ... src/MinStockDeposito.obj
+	@echo ... src/MinStockDeposito.i
+	@echo ... src/MinStockDeposito.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

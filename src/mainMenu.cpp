@@ -17,6 +17,7 @@ mainMenu::mainMenu(float width, float height) {
             "Cantidad total de articulos",
             "Minimo de stock",
             "Maximo de stock",
+            "Minimo de stock en deposito",
             "Salir"
     };
 

@@ -6,7 +6,6 @@
 #define FPROJECTP3_MAXSTOCK_H
 #define x_axis 150
 #define y_axis 200
-#define listArtSize 3
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include "Producto.h"

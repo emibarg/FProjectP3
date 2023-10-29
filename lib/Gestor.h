@@ -32,7 +32,7 @@ public:
     void total_art_dif();
     void total_art();
     std::vector<Producto> min_stock(int n);
-    void min_stock(int n, int deposito);
+    std::vector<Producto> min_stock(int n, int deposito);
     int stock(std::string nombre_articulo);
     int stock(std::string nombre_articulo, int deposito);
     std::vector<Producto>max_stock(int n);

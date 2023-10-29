@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/Emiliano Barg/Desktop/FProjectP3/src/Gestor.cpp" "CMakeFiles/FProjectP3.dir/src/Gestor.cpp.obj" "gcc" "CMakeFiles/FProjectP3.dir/src/Gestor.cpp.obj.d"
   "C:/Users/Emiliano Barg/Desktop/FProjectP3/src/MaxStock.cpp" "CMakeFiles/FProjectP3.dir/src/MaxStock.cpp.obj" "gcc" "CMakeFiles/FProjectP3.dir/src/MaxStock.cpp.obj.d"
   "C:/Users/Emiliano Barg/Desktop/FProjectP3/src/MinStock.cpp" "CMakeFiles/FProjectP3.dir/src/MinStock.cpp.obj" "gcc" "CMakeFiles/FProjectP3.dir/src/MinStock.cpp.obj.d"
+  "C:/Users/Emiliano Barg/Desktop/FProjectP3/src/MinStockDeposito.cpp" "CMakeFiles/FProjectP3.dir/src/MinStockDeposito.cpp.obj" "gcc" "CMakeFiles/FProjectP3.dir/src/MinStockDeposito.cpp.obj.d"
   "C:/Users/Emiliano Barg/Desktop/FProjectP3/src/main.cpp" "CMakeFiles/FProjectP3.dir/src/main.cpp.obj" "gcc" "CMakeFiles/FProjectP3.dir/src/main.cpp.obj.d"
   "C:/Users/Emiliano Barg/Desktop/FProjectP3/src/mainMenu.cpp" "CMakeFiles/FProjectP3.dir/src/mainMenu.cpp.obj" "gcc" "CMakeFiles/FProjectP3.dir/src/mainMenu.cpp.obj.d"
   )

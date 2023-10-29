@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/FProjectP3.dir/src/MaxStock.cpp.obj.d"
   "CMakeFiles/FProjectP3.dir/src/MinStock.cpp.obj"
   "CMakeFiles/FProjectP3.dir/src/MinStock.cpp.obj.d"
+  "CMakeFiles/FProjectP3.dir/src/MinStockDeposito.cpp.obj"
+  "CMakeFiles/FProjectP3.dir/src/MinStockDeposito.cpp.obj.d"
   "CMakeFiles/FProjectP3.dir/src/main.cpp.obj"
   "CMakeFiles/FProjectP3.dir/src/main.cpp.obj.d"
   "CMakeFiles/FProjectP3.dir/src/mainMenu.cpp.obj"

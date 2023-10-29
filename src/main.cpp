@@ -13,7 +13,7 @@
 #include "../lib/Producto.h"
 #include "../lib/Gestor.h"
 #include "../lib/MaxStock.h"
-
+#include "../lib/MinStockDeposito.h"
 int main() {
     // Crea un objeto Gestor y carga datos desde un archivo CSV
     Gestor gestor("../assets/Inventariado Fisico2.csv");
@@ -241,8 +241,141 @@ int main() {
                                 }
                             }
                         }
+                    } else if (selectedItem == 4) {
+                        sf::Text title;
+                        title.setString("Introduzca el minimo");
+                        title.setFont(fuente);
+                        title.setCharacterSize(50);
+                        title.setPosition(50, 100);
+
+                        sf::Text inputText;
+                        sf::String inputString;
+                        inputText.setFont(fuente);
+                        inputText.setCharacterSize(70);
+                        inputText.setPosition(355, 100);
+                        //Text for button
+                        sf::Text submitText;
+                        submitText.setFont(fuente);
+                        submitText.setFillColor(sf::Color::White);
+                        submitText.setString("Submit");
+                        submitText.setCharacterSize(40);
+                        submitText.setPosition(352, 195);
+                        // Create a submit button.
+                        sf::RectangleShape submitButton(sf::Vector2f(100, 40));
+                        submitButton.setPosition(350, 200);
+                        submitButton.setFillColor(sf::Color::Black);
+                        submitButton.setOutlineColor(sf::Color::White);
+                        submitButton.setOutlineThickness(2);
+
+                        sf::RenderWindow window(sf::VideoMode(800, 600), "Min Stock Dep");
+                        window.clear();
+                        while (window.isOpen()) {
+                            window.draw(background);
+                            window.draw(inputText);
+                            window.draw(title);
+                            window.draw(submitButton);
+                            window.draw(submitText);
+                            window.display();
+                            sf::Event event;
+                            while (window.pollEvent(event)) {
+                                if (event.type == sf::Event::Closed) {
+                                    window.close();
+                                }
+                                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+                                    window.close();
+                                }
+                                if (event.type == sf::Event::TextEntered) {
+                                    if (event.text.unicode < 128) {
+                                        inputString += static_cast<char>(event.text.unicode);
+                                        inputText.setString(inputString);
+                                    }
+                                }
+                                if (event.type == sf::Event::MouseButtonPressed) {
+                                    if (submitButton.getGlobalBounds().contains(sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
+                                        // The submit button was clicked. Convert inputString to an integer and call minstock(n).
+                                        int n = std::stoi(inputString.toAnsiString());
+                                        // Call maxStock(n) function and store the results in maxStockItems.
+
+
+
+                                        // Create a new window for "Cantidad mínima de stock"
+                                        sf::Text title;
+                                        title.setString("Introduzca el deposito");
+                                        title.setFont(fuente);
+                                        title.setCharacterSize(50);
+                                        title.setPosition(50, 100);
+
+                                        sf::RenderWindow DepNWind(sf::VideoMode(800, 600), "Deposito");
+                                        sf::Text inputText;
+                                        sf::String inputString;
+                                        inputText.setFont(fuente);
+                                        inputText.setCharacterSize(70);
+                                        inputText.setPosition(355, 100);
+                                        //Text for button
+                                        sf::Text submitText;
+                                        submitText.setFont(fuente);
+                                        submitText.setFillColor(sf::Color::White);
+                                        submitText.setString("Submit");
+                                        submitText.setCharacterSize(40);
+                                        submitText.setPosition(352, 195);
+                                        // Create a submit button.
+                                        sf::RectangleShape submitButton(sf::Vector2f(100, 40));
+                                        submitButton.setPosition(350, 200);
+                                        submitButton.setFillColor(sf::Color::Black);
+                                        submitButton.setOutlineColor(sf::Color::White);
+                                        submitButton.setOutlineThickness(2);
+
+                                        sf::RenderWindow window(sf::VideoMode(800, 600), "Deposito");
+                                        window.clear();
+                                        while (window.isOpen()) {
+                                            window.draw(background);
+                                            window.draw(title);
+                                            window.draw(inputText);
+                                            window.draw(submitButton);
+                                            window.draw(submitText);
+                                            window.display();
+                                            sf::Event event;
+                                            while (window.pollEvent(event)) {
+                                                if (event.type == sf::Event::Closed) {
+                                                    window.close();
+                                                }
+                                                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+                                                    window.close();
+                                                }
+                                                if (event.type == sf::Event::TextEntered) {
+                                                    if (event.text.unicode < 128) {
+                                                        inputString += static_cast<char>(event.text.unicode);
+                                                        inputText.setString(inputString);
+                                                    }
+                                                }
+
+                                                if (event.type == sf::Event::MouseButtonPressed) {
+                                                    if (submitButton.getGlobalBounds().contains(sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
+
+                                                        int n_dep = std::stoi(inputString.toAnsiString());
+
+                                                        std::vector<Producto> items = gestor.min_stock(n, n_dep);
+                                                        std::cout<<items.size()<<std::endl;
+
+
+
+
+                                                        // Create a new window for "Cantidad mínima de stock"
+                                                        sf::RenderWindow MinStockDepW(sf::VideoMode(800, 600), "Cantidad mínima de stock");
+                                                        MinStockDeposito MinStockDep(MinStockDepW.getSize().x, MinStockDepW.getSize().y, items, n, n_dep);
+
+
+                                                        items.clear();
+                                                    }
+
+                                                }
+                                            }
+
+
+                                        }}}}
+                                    }
                     }
-                    else if (selectedItem == 4) {
+                    else if (selectedItem == 5) {
                         MENU.close(); // Cierra la ventana principal para salir del programa
                     }
                 }

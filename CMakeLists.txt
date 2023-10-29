@@ -20,5 +20,7 @@ add_executable(FProjectP3
         src/Gestor.cpp
         lib/MaxStock.h
         src/MaxStock.cpp
+        lib/MinStockDeposito.h
+        src/MinStockDeposito.cpp
 )
 target_link_libraries(FProjectP3 sfml-graphics sfml-audio sfml-window sfml-system)
