@@ -14,11 +14,65 @@
 #include "../lib/Gestor.h"
 #include "../lib/MaxStock.h"
 #include "../lib/MinStockDeposito.h"
-int main() {
-    // Crea un objeto Gestor y carga datos desde un archivo CSV
-    Gestor gestor("../assets/Inventariado Fisico2.csv");
-    gestor.leerArchivo();
+int main(int argc, char** argv) {
 
+    std::string archivo = argv[argc - 1];
+    
+    // Crea un objeto Gestor y carga datos desde un archivo CSV
+    Gestor gestor(archivo);
+
+     if(argc > 2) // Si hay mas argumentos que solo la main y el archivo
+    {
+        std::string comando = argv[1];
+
+        if(comando == "-min_stock"){ 
+            
+        }else if(comando == "-max_Stock"){ 
+
+        }else{ // Armar el hashmap
+            gestor.leerArchivo();
+
+            if(comando == "-total_art_dif")
+            {
+                // Total art dif.
+                std::cout<<"Cantidad de articulos diferentes: "<<gestor.getTotalArtDif()<<std::endl;
+                return 0;
+            }
+
+            if(comando == "-total_art")
+            {
+                // Total art:
+                std::cout<<"Cantidad de articulos: "<<gestor.getTotalArt()<<std::endl;
+                return 0;
+            }
+
+            if(comando == "-stock")
+            {
+                if(argc == 4){
+
+
+                    std::string nombre = argv[2];
+
+                    nombre = gestor.reemplazarN(nombre);
+
+                    std::cout<<"Stock de "<<nombre<<": "<<gestor.stock(nombre)<<std::endl;
+                    return 0;
+
+                }else if(argc == 5) {
+                    std::string nombre = argv[2];
+                    int deposito = std::stoi(argv[3]);
+
+                    std::cout << "Stock de " << nombre << " en el deposito " << deposito << ": "
+                              << gestor.stock(nombre, deposito) << std::endl;
+                    return 0;
+                }
+            }
+            std::cout<<"COMANDO INVALIDO"<<std::endl;
+            return 0;
+        }
+}else{ // Interfaz grafica
+
+    
     // Crea una ventana de SFML llamada MENU
     sf::RenderWindow MENU(sf::VideoMode(800, 600), "Menu", sf::Style::Default);
 
@@ -647,9 +701,9 @@ int main() {
         mainMenu.draw(MENU);
         MENU.display();
     }
-
+    
     // Detiene la música cuando ya no es necesaria
-    music.stop();
-
+    music.stop();}
     return 0;
+}
 }
