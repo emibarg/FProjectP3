@@ -162,3 +162,44 @@ std::vector<Producto> Gestor::min_stock(int n) {
     }
     return m_min_stock;
 }
+
+std::string Gestor::reemplazarN(std::string base) {
+    std::string output;
+
+    for (int i = 0; i < base.length(); ++i) {
+
+        std::string temp;
+
+        if( isValidUTF8( base.substr(i, 1) )  ){
+            temp = base.substr(i, 1);
+        }else{
+            temp = base.substr(i, 2);
+            i++;
+        }
+
+        if( temp == "Á"){
+            output += '\301';
+        }else if(temp == "É"){
+            output += '\311';
+        }else if(temp == "Í"){
+            output += '\315';
+        }else if(temp == "Ó"){
+            output += '\323';
+        }else if(temp == "Ú"){
+            output += '\332';
+        }else if(temp == "Ñ") {
+            output += '\321';
+        }else if(temp == "Ü") {
+            output += '\334';
+        }else if(temp == "Ø") {
+            output += '\330';
+        }else{
+            output += temp;
+        }
+
+    }
+
+    return output;
+}
+
+
