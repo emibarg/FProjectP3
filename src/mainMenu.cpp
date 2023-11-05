@@ -11,13 +11,15 @@ mainMenu::mainMenu(float width, float height) {
         std::cout << "Error loading font" << std::endl;
     }
 
-    int characterSize = 60;
+    int characterSize = 50;
     std::string menuItems[] = {
             "Cantidad total de articulos diferentes",
             "Cantidad total de articulos",
             "Minimo de stock",
             "Maximo de stock",
             "Minimo de stock en deposito",
+            "Stock de articulo",
+            "Stock de articulo por deposito",
             "Salir"
     };
 
@@ -26,7 +28,7 @@ mainMenu::mainMenu(float width, float height) {
         mainMenuText[i].setFont(font);
         mainMenuText[i].setCharacterSize(characterSize);
         mainMenuText[i].setString(menuItems[i]);
-        mainMenuText[i].setPosition(x_axis, y_axis + i * 100);
+        mainMenuText[i].setPosition(x_axis, y_axis + i * 50);
     }
 
     // Establece el color del texto para resaltar la primera opción
@@ -35,6 +37,9 @@ mainMenu::mainMenu(float width, float height) {
     mainMenuText[2].setFillColor(sf::Color::White);
     mainMenuText[3].setFillColor(sf::Color::White);
     mainMenuText[4].setFillColor(sf::Color::White);
+    mainMenuText[5].setFillColor(sf::Color::White);
+    mainMenuText[6].setFillColor(sf::Color::White);
+    mainMenuText[7].setFillColor(sf::Color::White);
 
     mainMenuSelected = 0;  // Inicializa la opción seleccionada como la primera.
 }

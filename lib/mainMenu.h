@@ -8,7 +8,7 @@
 #include <iostream>
 #define x_axis 150
 #define y_axis 50
-#define max_main_menu 6
+#define max_main_menu 8
 class mainMenu {
 public:
     mainMenu(float width, float height);

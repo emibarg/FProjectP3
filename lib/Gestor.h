@@ -29,8 +29,7 @@ public:
     Gestor();
     Gestor(std::string ubicacion_archivo);
     void leerArchivo();
-    void total_art_dif();
-    void total_art();
+
     std::vector<Producto> min_stock(int n);
     std::vector<Producto> min_stock(int n, int deposito);
     int stock(std::string nombre_articulo);
@@ -38,9 +37,6 @@ public:
     std::vector<Producto>max_stock(int n);
     Producto generarProducto(std::string nombre, std::string codigo, std::vector<int> depositos);
     void cargarMapa(std::string nombre, Producto producto);
-    void cargarMinStock(Producto producto, int n);
-    void cargarMaxStock(Producto producto, int n);
-    void cargarMinStockDeposito(Producto producto, int n, int deposito);
     void setUbicacionArchivo(std::string ubicacion_archivo){m_ubicacion_archivo = ubicacion_archivo;}
     std::string getUbicacionArchivo()const{return m_ubicacion_archivo;}
     std::unordered_map<std::string, Producto> getProductos()const{return m_productos;}
