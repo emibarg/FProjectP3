@@ -29,6 +29,13 @@ public:
 
     // Métodos para acceder a los miembros de la clase.
     std::vector<int> getDepositos() const { return m_depositos; }
+    int getStock() {
+        int stock = 0;
+        for (int i = 0; i < m_depositos.size(); i++) {
+            stock += m_depositos[i];
+        }
+        return stock;
+    }
     void setCodigo(std::string codigo);
     void setNombre(std::string nombre);
     std::string getNombre() const { return m_nombre; }

@@ -7,6 +7,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <iostream>
+#include <string>
 #include "../lib/CantArtDif.h"
 #include "../lib/CantArt.h"
 #include "../lib/MinStock.h"
@@ -14,14 +15,17 @@
 #include "../lib/Gestor.h"
 
 int main(int argc, char** argv) {
-    // Agregar reloj para controlar el tiempo de ejecución
 
     std::string archivo = argv[argc - 1];
-
 
     // Crea un objeto Gestor y carga datos desde un archivo CSV
     Gestor gestor("../assets/Inventariado Fisico2.csv");
     gestor.leerArchivo();
+
+
+    for (int i = 0; i < argc; ++i) {
+        std::cout<<"Argumento "<<i<<": "<<argv[i]<<std::endl;
+    }
 
     /*
      * Crea el gestor con el comando.
@@ -40,6 +44,44 @@ int main(int argc, char** argv) {
 
         }else{ // Armar el hashmap
             gestor.leerArchivo();
+
+            if(comando == "-total_art_dif")
+            {
+                // Total art dif.
+                std::cout<<"Cantidad de articulos diferentes: "<<gestor.getTotalArtDif()<<std::endl;
+                return 0;
+            }
+
+            if(comando == "-total_art")
+            {
+                // Total art:
+                std::cout<<"Cantidad de articulos: "<<gestor.getTotalArt()<<std::endl;
+                return 0;
+            }
+
+            if(comando == "-stock")
+            {
+                if(argc == 4){
+
+
+                    std::string nombre = argv[2];
+
+                    nombre = gestor.reemplazarN(nombre);
+
+                    std::cout<<"Stock de "<<nombre<<": "<<gestor.stock(nombre)<<std::endl;
+                    return 0;
+
+                }else if(argc == 5) {
+                    std::string nombre = argv[2];
+                    int deposito = std::stoi(argv[3]);
+
+                    std::cout << "Stock de " << nombre << " en el deposito " << deposito << ": "
+                              << gestor.stock(nombre, deposito) << std::endl;
+                    return 0;
+                }
+            }
+            std::cout<<"COMANDO INVALIDO"<<std::endl;
+            return 0;
         }
     }else{ // Interfaz grafica
 
