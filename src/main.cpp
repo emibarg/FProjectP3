@@ -111,7 +111,7 @@ int main(int argc, char** argv) {
         }
 }else{ // Interfaz grafica
 
-    
+    gestor.leerArchivo();
     // Crea una ventana de SFML llamada MENU
     sf::RenderWindow MENU(sf::VideoMode(800, 600), "Menu", sf::Style::Default);
 
