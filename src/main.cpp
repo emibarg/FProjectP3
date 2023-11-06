@@ -56,7 +56,7 @@ int main(int argc, char** argv) {
                     std::string nombre = argv[2];
                     int deposito = std::stoi(argv[3]) - 1;
 
-                    std::cout << "Stock de " << nombre << " en el deposito " << deposito << ": "
+                    std::cout << "Stock de " << nombre << " en el deposito " << deposito + 1<< ": "
                               << gestor.stock(nombre, deposito) << std::endl;
                     return 0;
                 }
