@@ -17,7 +17,7 @@
 int main(int argc, char** argv) {
 
     std::string archivo = argv[argc - 1];
-    
+
     // Crea un objeto Gestor y carga datos desde un archivo CSV
     Gestor gestor(archivo);
 
@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
         std::string comando = argv[1];
 
         if(comando == "-min_stock"){ 
-            
+
         }else if(comando == "-max_Stock"){ 
 
         }else{ // Armar el hashmap
@@ -67,6 +67,45 @@ int main(int argc, char** argv) {
                     return 0;
                 }
             }
+
+            if (comando == "-min_stock") {
+                if (argc == 4) { // Si hay dos argumentos mas, es decir, el comando y el numero
+                    // Min stock n
+                    int n = std::stoi(argv[2]); // Convierte el string a int
+                    std::vector<Producto> items = gestor.min_stock(n); // Llama a la funcion min_stock
+                    //imprime la lista items, con los productos que cumplen la condicion
+                    for (int i = 0; i < items.size(); ++i) {
+                        std::cout << items[i].getNombre() << " - " << items[i].getTotalStock() << std::endl;
+                    }
+                    return 0;
+                }
+                if (argc == 5) { // Si hay tres argumentos mas, es decir, el comando, el numero y el deposito
+                    // Min stock n deposito
+                    int n = std::stoi(argv[2]);
+                    int deposito = std::stoi(argv[3]);
+                    std::vector<Producto> items = gestor.min_stock(n, deposito);
+                    //imprime la lista items, con los productos que cumplen la condiciones
+                    for (int i = 0; i < items.size(); ++i) {
+                        std::cout << items[i].getNombre() << " - " << items[i].getDepositos()[deposito] << std::endl;
+                    }
+                    return 0;
+                }
+
+            }
+
+            if(comando == "-max_stock"){
+                if(argc == 4){
+                    // Max stock n
+                    int n = std::stoi(argv[2]);
+                    std::vector<Producto> items = gestor.max_stock(n);
+                    //imprime la lista items, con los productos que cumplen la condicion
+                    for (int i = 0; i < items.size(); ++i) {
+                        std::cout << items[i].getNombre() << " - " << items[i].getTotalStock() << std::endl;
+                    }
+                    return 0;
+                }
+            }
+
             std::cout<<"COMANDO INVALIDO"<<std::endl;
             return 0;
         }
@@ -706,4 +745,4 @@ int main(int argc, char** argv) {
     music.stop();}
     return 0;
 }
-}
+

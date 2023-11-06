@@ -82,8 +82,7 @@ public:
     std::unordered_map<std::string, Producto> getProductos()const{return m_productos;}
     int getTotalArtDif()const{return total_art_dif_;}
     int getTotalArt()const{return total_art_;}
-    void setTotalArtDif(int total_art_dif){
-        total_art_dif_ = total_art_dif;}
+    void setTotalArtDif(int total_art_dif){total_art_dif_ = total_art_dif;}
     void setTotalArt(int total_art){total_art_ = total_art;}
 
     ~Gestor();

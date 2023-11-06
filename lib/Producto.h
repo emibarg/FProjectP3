@@ -34,7 +34,13 @@ public:
     std::string getNombre() const { return m_nombre; }
     std::string getCodigo() const { return m_codigo; }
     void setDepositos(std::vector<int> depositos) { m_depositos = depositos; }
-
+    int getTotalStock() const{
+        int total = 0;
+        for (int i = 0; i < m_depositos.size(); ++i) {
+            total += m_depositos[i];
+        }
+        return total;
+    }
     // Destructor de la clase (no realiza acciones adicionales en este caso).
     ~Producto() {}
 
