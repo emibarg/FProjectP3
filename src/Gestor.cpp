@@ -129,35 +129,35 @@ std::vector<Producto> Gestor::min_stock(int n, int deposito) {
 }
 
 std::vector<Producto> Gestor::max_stock(int n) {
-    m_max_stock.clear(); // limpiamos la cola de prioridad
-    int suma_stock = 0; // inicializamos la suma
+    m_max_stock.clear(); // limpiamos el vector
+    int suma_stock = 0; // inicializamos la suma en 0
     for (auto &producto: m_productos) { // recorremos el mapa de productos
         std::vector<int> depositos = producto.second.getDepositos(); // obtenemos los depositos del producto
         suma_stock = 0; // inicializamos la suma
 
-        for(int i : depositos){ // recorremos los depositos
-            suma_stock += i; // sumamos el stock de cada deposito
+        for(int i : depositos){ // recorremos los depositos del producto
+            suma_stock += i; // sumamos el stock de cada deposito del producto
         } // si la suma es mayor a n
 
-        if(suma_stock > n){ // si la suma es mayor a n lo metemos en la cola de prioridad
-            m_max_stock.push_back(producto.second); // lo metemos en la cola de prioridad
+        if(suma_stock > n){ // si la suma es mayor a n lo metemos en el vector
+            m_max_stock.push_back(producto.second); // lo metemos en el vector
         }
     }
     return m_max_stock; // devolvemos la cola de prioridad
 }
 std::vector<Producto> Gestor::min_stock(int n) {
-    m_min_stock.clear();
-    for (const auto& producto : m_productos) {
+    m_min_stock.clear(); // limpiamos el vector
+    for (const auto& producto : m_productos) { // recorremos el mapa de productos
 
-        const std::vector<int>& depositos = producto.second.getDepositos();
-        int suma_stock = 0;
+        const std::vector<int>& depositos = producto.second.getDepositos(); // obtenemos los depositos del producto
+        int suma_stock = 0; // inicializamos la suma
 
-        for (int i : depositos) {
-            suma_stock += i;
+        for (int i : depositos) { // recorremos los depositos del producto
+            suma_stock += i; // sumamos el stock de cada deposito del producto
         }
 
         if (suma_stock <= n) {
-            m_min_stock.push_back(producto.second);
+            m_min_stock.push_back(producto.second); // lo metemos en el vector
         }
     }
     return m_min_stock;

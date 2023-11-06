@@ -24,12 +24,6 @@ int main(int argc, char** argv) {
      if(argc > 2) // Si hay mas argumentos que solo la main y el archivo
     {
         std::string comando = argv[1];
-
-        if(comando == "-min_stock"){ 
-
-        }else if(comando == "-max_Stock"){ 
-
-        }else{ // Armar el hashmap
             gestor.leerArchivo();
 
             if(comando == "-total_art_dif")
@@ -106,10 +100,10 @@ int main(int argc, char** argv) {
                 }
             }
 
-            std::cout<<"COMANDO INVALIDO"<<std::endl;
-            return 0;
-        }
-}else{ // Interfaz grafica
+        std::cout<<"COMANDO INVALIDO"<<std::endl;
+        return 0;
+
+    }else{ // Interfaz grafica
 
     gestor.leerArchivo();
     // Crea una ventana de SFML llamada MENU
