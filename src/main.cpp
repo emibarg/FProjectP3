@@ -54,7 +54,7 @@ int main(int argc, char** argv) {
 
                 }else if(argc == 5) {
                     std::string nombre = argv[2];
-                    int deposito = std::stoi(argv[3]);
+                    int deposito = std::stoi(argv[3]) - 1;
 
                     std::cout << "Stock de " << nombre << " en el deposito " << deposito << ": "
                               << gestor.stock(nombre, deposito) << std::endl;
@@ -76,7 +76,7 @@ int main(int argc, char** argv) {
                 if (argc == 5) { // Si hay tres argumentos mas, es decir, el comando, el numero y el deposito
                     // Min stock n deposito
                     int n = std::stoi(argv[2]);
-                    int deposito = std::stoi(argv[3]);
+                    int deposito = std::stoi(argv[3]) - 1;
                     std::vector<Producto> items = gestor.min_stock(n, deposito);
                     //imprime la lista items, con los productos que cumplen la condiciones
                     for (int i = 0; i < items.size(); ++i) {
@@ -87,7 +87,7 @@ int main(int argc, char** argv) {
 
             }
 
-            if(comando == "-max_stock"){
+            if(comando == "-max_Stock"){
                 if(argc == 4){
                     // Max stock n
                     int n = std::stoi(argv[2]);
