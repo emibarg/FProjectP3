@@ -22,5 +22,16 @@ add_executable(FProjectP3
         src/MaxStock.cpp
         lib/MinStockDeposito.h
         src/MinStockDeposito.cpp
+        src/main.cpp
+        src/mainMenu.cpp
+        src/MaxStock.cpp
+        src/CantArt.cpp
+        src/CantArtDif.cpp
+        src/Gestor.cpp
+        src/mainMenu.cpp
+        src/mainMenu.cpp
+        src/MaxStock.cpp
+        src/MinStock.cpp
+        src/MinStockDeposito.cpp
 )
 target_link_libraries(FProjectP3 sfml-graphics sfml-audio sfml-window sfml-system)

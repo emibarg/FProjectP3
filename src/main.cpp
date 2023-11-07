@@ -14,10 +14,13 @@
 #include "../lib/Gestor.h"
 #include "../lib/MaxStock.h"
 #include "../lib/MinStockDeposito.h"
+#include <ctime>
 int main(int argc, char** argv) {
 
     std::string archivo = argv[argc - 1];
 
+    time_t start,end;
+    time(&start);
     // Crea un objeto Gestor y carga datos desde un archivo CSV
     Gestor gestor(archivo);
 
@@ -100,7 +103,11 @@ int main(int argc, char** argv) {
                 }
             }
 
+            time(&end);
+
         std::cout<<"COMANDO INVALIDO"<<std::endl;
+
+        std::cout << "tiempo ejecicion: " << difftime(end, start) << std::endl;
         return 0;
 
     }else{ // Interfaz grafica
