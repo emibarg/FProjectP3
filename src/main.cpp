@@ -14,7 +14,7 @@
 #include "../lib/Gestor.h"
 #include "../lib/MaxStock.h"
 #include "../lib/MinStockDeposito.h"
-#include <ctime>
+#include <ctime> //medir tiempo
 int main(int argc, char** argv) {
 
     std::string archivo = argv[argc - 1];
