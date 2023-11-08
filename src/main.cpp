@@ -205,7 +205,7 @@ int main(int argc, char** argv) {
                         // Handle "Cantidad mínima de stock" menu option
                         // Create an SFML text input field for 'n'.
                         sf::Text title;
-                        title.setString("Introduzca el deposito");
+                        title.setString("Introduzca el n");
                         title.setFont(fuente);
                         title.setCharacterSize(50);
                         title.setPosition(50, 100);
@@ -280,7 +280,7 @@ int main(int argc, char** argv) {
                         // Handle "Cantidad maxima de stock" menu option
                         // Create an SFML text input field for 'n'.
                         sf::Text title;
-                        title.setString("Introduzca el deposito");
+                        title.setString("Introduzca el n");
                         title.setFont(fuente);
                         title.setCharacterSize(50);
                         title.setPosition(50, 100);
